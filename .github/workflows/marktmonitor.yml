@@ -1,0 +1,64 @@
+name: Datamarkt Monitor
+
+on:
+  schedule:
+    - cron: "17 5 * * *"   # dagelijks om 05:17 UTC (06:17/07:17 NL-tijd)
+  workflow_dispatch:        # handmatig starten via het tabblad Actions
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: marktmonitor
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installeren
+        run: pip install -r requirements.txt pytest
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Data ophalen en dashboard bouwen
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          ADZUNA_MAX_CALLS: ${{ vars.ADZUNA_MAX_CALLS || '30' }}
+          PYTHONPATH: src
+        run: python -m marktmonitor run
+
+      - name: Data opslaan in de repository
+        run: |
+          git config user.name "marktmonitor-bot"
+          git config user.email "marktmonitor-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Data-update $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Pages configureren
+        uses: actions/configure-pages@v5
+
+      - name: Dashboard uploaden
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Dashboard publiceren
+        id: deploy
+        uses: actions/deploy-pages@v4
