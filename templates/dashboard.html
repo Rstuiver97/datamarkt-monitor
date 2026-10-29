@@ -1,0 +1,422 @@
+<title>Datamarkt Monitor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: een vergaderbaar marktrapport. Smalle kop, filterbalk, daarna secties
+   van samenvatting naar detail; twee kolommen op breed scherm, één op telefoon. */
+:root {
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --ink: #15191e;
+  --ink-2: #4a525c;
+  --ink-3: #79818b;
+  --rule: #e2e5e9;
+  --grid: #eceef1;
+  --accent: #1c5cab;
+  --nl: #2a78d6;
+  --us: #eb6834;
+  --r1: #2a78d6; --r2: #eb6834; --r3: #1baf7a; --r4: #eda100; --r5: #e87ba4; --r6: #008300; --r7: #6250d6; --r8: #e34948;
+  --good: #0f7b45; --bad: #b4302f;
+  --good-bg: #e3f3ea; --bad-bg: #f9e4e3;
+  --warn-bg: #fff4d6; --warn-ink: #6b4a00;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111418; --surface: #191d22; --ink: #eef0f2; --ink-2: #b6bcc4; --ink-3: #8a929c;
+    --rule: #2a3037; --grid: #242a30; --accent: #86b6ef;
+    --nl: #3987e5; --us: #d95926;
+    --r1: #3987e5; --r2: #d95926; --r3: #199e70; --r4: #c98500; --r5: #d55181; --r6: #008300; --r7: #9085e9; --r8: #e66767;
+    --good: #5fcf94; --bad: #f08a88; --good-bg: #16301f; --bad-bg: #3a1d1d;
+    --warn-bg: #3a2f10; --warn-ink: #f3d68a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111418; --surface: #191d22; --ink: #eef0f2; --ink-2: #b6bcc4; --ink-3: #8a929c;
+  --rule: #2a3037; --grid: #242a30; --accent: #86b6ef;
+  --nl: #3987e5; --us: #d95926;
+  --r1: #3987e5; --r2: #d95926; --r3: #199e70; --r4: #c98500; --r5: #d55181; --r6: #008300; --r7: #9085e9; --r8: #e66767;
+  --good: #5fcf94; --bad: #f08a88; --good-bg: #16301f; --bad-bg: #3a1d1d;
+  --warn-bg: #3a2f10; --warn-ink: #f3d68a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--f-body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; display: grid; gap: 28px; }
+header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
+h1 { font: 700 clamp(28px, 4vw, 40px)/1.05 var(--f-display); letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+h1 small { display: block; font: 500 13px/1.4 var(--f-body); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+h2 { font: 600 21px/1.2 var(--f-display); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h3 { font: 600 13px/1.3 var(--f-body); margin: 0; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); }
+p { margin: 0; max-width: 68ch; }
+.muted { color: var(--ink-3); }
+.meta { font: 13px/1.5 var(--f-mono); color: var(--ink-2); text-align: right; }
+.banner { background: var(--warn-bg); color: var(--warn-ink); border-radius: 8px; padding: 12px 16px; font-weight: 500; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--rule); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button { font: 500 14px var(--f-body); border: 0; background: transparent; color: var(--ink-2); padding: 7px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.seg button:focus-visible, select:focus-visible, .chip:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+label.sel { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--ink-2); }
+select { font: 14px var(--f-body); padding: 6px 10px; border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); color: var(--ink); }
+section { display: grid; gap: 14px; }
+.sec-head { display: grid; gap: 4px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 20px; }
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; display: grid; gap: 12px; min-width: 0; align-content: start; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.tile .role { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.tile .num { font: 600 30px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.tile .sub { font: 12.5px/1.4 var(--f-mono); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pill { display: inline-flex; align-items: center; gap: 3px; font: 500 12px/1 var(--f-mono); padding: 4px 7px; border-radius: 99px; width: fit-content; }
+.pill.up { color: var(--good); background: var(--good-bg); }
+.pill.down { color: var(--bad); background: var(--bad-bg); }
+.pill.flat { color: var(--ink-2); background: var(--grid); }
+.chart { position: relative; height: 300px; min-width: 0; }
+.chart.tall { height: 380px; }
+.chart .empty { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 13px var(--f-body); border: 1px solid var(--rule); background: var(--surface); color: var(--ink-3); padding: 4px 10px; border-radius: 99px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.chip[aria-pressed="true"] { color: var(--ink); border-color: var(--ink-3); }
+.chip[aria-pressed="false"] .dot { opacity: .25; }
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+th { text-align: left; font: 600 12px/1.3 var(--f-body); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); padding: 8px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--grid); vertical-align: middle; }
+td.n, th.n { text-align: right; font-family: var(--f-mono); font-size: 13px; }
+.bar { height: 8px; border-radius: 4px; background: var(--grid); position: relative; min-width: 80px; }
+.bar i { position: absolute; top: 0; bottom: 0; border-radius: 4px; }
+.empty { color: var(--ink-3); font-size: 14px; padding: 24px 0; text-align: center; border: 1px dashed var(--rule); border-radius: 8px; }
+details summary { cursor: pointer; color: var(--accent); font-size: 14px; }
+.notes { display: grid; gap: 10px; font-size: 14px; color: var(--ink-2); }
+.notes ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.dl { display: flex; flex-wrap: wrap; gap: 8px; }
+.dl a { font: 13px var(--f-mono); color: var(--accent); }
+a { color: var(--accent); }
+@media (max-width: 560px) { .meta { text-align: left; } .chart { height: 260px; } .chart.tall { height: 320px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1><small>Arbeidsmarkt voor data- en AI-rollen</small>Datamarkt Monitor</h1>
+    <div class="meta" id="meta"></div>
+  </header>
+  <div class="banner" id="demo" hidden>Voorbeelddata. Deze cijfers zijn synthetisch en dienen alleen om de opmaak te tonen. Zet je Adzuna-key in GitHub en de echte data verschijnt na de eerste run.</div>
+
+  <div class="filters" role="group" aria-label="Filters">
+    <div class="seg" role="group" aria-label="Land">
+      <button type="button" id="c-nl" data-c="nl" aria-pressed="true"><span class="dot" style="background:var(--nl)"></span>Nederland</button>
+      <button type="button" id="c-us" data-c="us" aria-pressed="false"><span class="dot" style="background:var(--us)"></span>Verenigde Staten</button>
+    </div>
+    <label class="sel" for="role-sel">Rol voor skills
+      <select id="role-sel"></select>
+    </label>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Nieuwe vacatures, laatste 30 dagen</h2>
+      <p class="muted" id="kpi-note"></p></div>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Vraag over tijd</h2>
+      <p class="muted">Links: nieuw gevonden vacatures per week (ontdubbeld). Rechts: totaal aantal actieve vacatures op Adzuna per rol, dagelijks gemeten.</p></div>
+    <div class="grid2">
+      <div class="panel"><h3>Nieuwe vacatures per week</h3><div class="legend" id="lg-weekly"></div><div class="chart"><canvas id="ch-weekly" aria-label="Nieuwe vacatures per week per rol"></canvas></div></div>
+      <div class="panel"><h3>Actieve vacatures (Adzuna)</h3><div class="legend" id="lg-volume"></div><div class="chart"><canvas id="ch-volume" aria-label="Actieve vacatures per rol"></canvas></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Marktindex Indeed</h2>
+      <p class="muted">Vacatures op Indeed, geïndexeerd op 1 februari 2020 = 100, seizoensgecorrigeerd. Indeed publiceert voor Nederland alleen het totaal; Data &amp; Analytics in de VS, Duitsland en het VK dient als referentie.</p></div>
+    <div class="panel">
+      <div class="chips" id="idx-chips" role="group" aria-label="Reeksen"></div>
+      <div class="chart tall"><canvas id="ch-indeed" aria-label="Indeed vacature-index"></canvas></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Gevraagde skills</h2>
+      <p class="muted" id="skills-note"></p></div>
+    <div class="grid2">
+      <div class="panel"><h3 id="skills-title">Top skills</h3><div class="chart tall"><canvas id="ch-skills" aria-label="Aandeel vacatures per skill"></canvas></div></div>
+      <div class="panel"><h3>Voorsprong VS: skills die in de VS vaker gevraagd worden</h3>
+        <p class="muted" style="font-size:13px">Aandeel van alle data-vacatures (laatste 90 dagen) dat de skill noemt. Een groot verschil wijst op een trend die in Nederland nog moet komen.</p>
+        <div class="tbl-wrap" id="lead"></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Vroege signalen uit de VS-techsector</h2>
+      <p class="muted">Aandeel van de maandelijkse “Who is hiring?”-posts op Hacker News dat een rol of tool noemt. Startups en techbedrijven posten hier; verschuivingen zijn vaak maanden eerder zichtbaar dan in de brede markt.</p></div>
+    <div class="grid2">
+      <div class="panel"><h3>Tools en technieken</h3><div class="legend" id="lg-hns"></div><div class="chart"><canvas id="ch-hn-skills" aria-label="Aandeel HN-posts per skill"></canvas></div></div>
+      <div class="panel"><h3>Rollen</h3><div class="legend" id="lg-hnr"></div><div class="chart"><canvas id="ch-hn-roles" aria-label="Aandeel HN-posts per rol"></canvas></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Beloning</h2>
+      <p class="muted" id="sal-note"></p></div>
+    <div class="grid2">
+      <div class="panel"><h3 id="sal-title">Bruto jaarsalaris</h3><div class="tbl-wrap" id="salary"></div></div>
+      <div class="panel"><h3>Werkvorm en senioriteit</h3><div id="workmode" class="legend"></div><div class="chart"><canvas id="ch-sen" aria-label="Senioriteit per rol"></canvas></div><div class="legend" id="lg-sen"></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div class="panel"><h3>Meest actieve werkgevers in Nederland (90 dagen)</h3><div class="tbl-wrap" id="employers"></div></div>
+      <div class="panel"><h3>CBS: openstaande vacatures</h3><div class="tbl-wrap" id="cbs"></div></div>
+    </div>
+  </section>
+
+  <section class="notes">
+    <h2>Bronnen en methode</h2>
+    <ul>
+      <li><b>Adzuna API</b> (NL en VS): dagelijks totaal per zoekterm en de nieuwste vacatures. Salaris alleen als de werkgever het vermeldt; door Adzuna geschatte salarissen worden genegeerd.</li>
+      <li><b>Werkgeversfeeds</b> (Greenhouse, Lever, Recruitee, Ashby, Workable, SmartRecruiters): volledige vacatureteksten van een samengestelde lijst werkgevers.</li>
+      <li><b>Indeed Hiring Lab</b> Job Postings Index, CC BY 4.0. <b>Hacker News</b> “Who is hiring?” via de Algolia API. <b>CBS StatLine</b> tabel 80567ned.</li>
+      <li>Rollen worden toegekend op functietitel; dezelfde vacature bij meerdere bronnen telt één keer. Maandsalarissen zijn ×12 gerekend, zonder vakantiegeld. Uurtarieven (vaak freelance) staan apart.</li>
+    </ul>
+    <div class="dl" id="downloads"></div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const DATA = /*__DATA__*/null;
+const ROLES = Object.keys(DATA.meta.rollen);
+const ROLE_SLOT = {}; ROLES.forEach((r, i) => ROLE_SLOT[r] = `--r${i + 1}`);
+const state = { country: 'nl', role: '_alle', idx: new Set(['NL · Alle vacatures', 'US · Data & Analytics', 'DE · Data & Analytics', 'US · Software Development']) };
+try { const s = localStorage.getItem('dm-country'); if (s === 'nl' || s === 'us') state.country = s; } catch (e) {}
+
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const nf = new Intl.NumberFormat('nl-NL');
+const money = (v, cur) => v == null ? '–' : new Intl.NumberFormat('nl-NL', { style: 'currency', currency: cur, maximumFractionDigits: 0 }).format(v);
+const fmtDate = s => new Date(s).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: '2-digit' });
+const fmtMonth = s => new Date(s + '-01').toLocaleDateString('nl-NL', { month: 'short', year: '2-digit' });
+const el = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const charts = {};
+
+function baseOpts(extra = {}) {
+  const ink = css('--ink-2'), grid = css('--grid');
+  return Object.assign({
+    responsive: true, maintainAspectRatio: false, animation: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { display: false }, tooltip: { backgroundColor: css('--surface'), titleColor: css('--ink'), bodyColor: css('--ink-2'), borderColor: css('--rule'), borderWidth: 1, padding: 10, boxPadding: 4, usePointStyle: true } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: ink, maxRotation: 0, autoSkipPadding: 18, font: { family: css('--f-body'), size: 12 } }, border: { color: css('--rule') } },
+      y: { beginAtZero: true, grid: { color: grid }, ticks: { color: ink, font: { family: css('--f-mono'), size: 11 } }, border: { display: false } },
+    },
+  }, extra);
+}
+function msgFor(id) {
+  const box = el(id).parentElement;
+  let m = box.querySelector('.empty');
+  if (!m) { m = document.createElement('div'); m.className = 'empty'; m.hidden = true; box.appendChild(m); }
+  return m;
+}
+function draw(id, cfg) {
+  if (charts[id]) charts[id].destroy();
+  el(id).hidden = false; msgFor(id).hidden = true;
+  charts[id] = new Chart(el(id), cfg);
+}
+function line(label, data, color, extra = {}) {
+  return Object.assign({ label, data, borderColor: color, backgroundColor: color, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, tension: 0.25, spanGaps: true }, extra);
+}
+function legend(id, items) { el(id).innerHTML = items.map(([name, col]) => `<span><i class="dot" style="background:${col}"></i>${esc(name)}</span>`).join(''); }
+function empty(id, msg) {
+  if (charts[id]) { charts[id].destroy(); delete charts[id]; }
+  el(id).hidden = true;
+  const m = msgFor(id); m.textContent = msg; m.hidden = false;
+  const lg = { 'ch-weekly': 'lg-weekly', 'ch-volume': 'lg-volume', 'ch-hn-skills': 'lg-hns', 'ch-hn-roles': 'lg-hnr', 'ch-sen': 'lg-sen' }[id];
+  if (lg) el(lg).innerHTML = '';
+}
+
+// ---------- kop ----------
+function renderMeta() {
+  const m = DATA.meta;
+  const src = Object.entries(m.bronnen).map(([k, v]) => `${k}: ${nf.format(v)}`).join(' · ');
+  el('meta').innerHTML = `Bijgewerkt ${esc(m.gegenereerd)}<br>${nf.format(m.totaal_vacatures)} unieke vacatures${src ? '<br>' + esc(src) : ''}`;
+  el('demo').hidden = !m.demo;
+  const sel = el('role-sel');
+  sel.innerHTML = `<option value="_alle">Alle data-rollen</option>` + ROLES.map(r => `<option value="${r}">${esc(m.rollen[r])}</option>`).join('');
+  el('downloads').innerHTML = 'Ruwe data: ' + ['postings.csv', 'counts.csv', 'hn_monthly.csv', 'indeed.csv', 'cbs_vacatures.csv', 'data.json'].map(f => `<a href="${f}">${f}</a>`).join('');
+}
+
+// ---------- KPI ----------
+function renderTiles() {
+  const c = state.country, k = DATA.kpi[c], sal = DATA.salaris.jaar[c], cur = DATA.salaris.valuta[c];
+  el('kpi-note').textContent = `${DATA.meta.landen[c]}. Verandering ten opzichte van de 30 dagen daarvoor; mediaan salaris over vacatures met een vermeld salaris (180 dagen).`;
+  el('tiles').innerHTML = ROLES.map(r => {
+    const { n30, vorige30 } = k[r];
+    let pill = '<span class="pill flat">nieuw</span>';
+    if (vorige30 > 0) {
+      const d = Math.round((n30 - vorige30) / vorige30 * 100);
+      pill = `<span class="pill ${d > 2 ? 'up' : d < -2 ? 'down' : 'flat'}">${d > 0 ? '▲' : d < 0 ? '▼' : '■'} ${d > 0 ? '+' : ''}${d}%</span>`;
+    } else if (n30 === 0) pill = '<span class="pill flat">geen data</span>';
+    const s = sal[r];
+    return `<div class="tile"><div class="role"><i class="dot" style="background:var(${ROLE_SLOT[r]})"></i>${esc(DATA.meta.rollen[r])}</div>
+      <div class="num">${nf.format(n30)}</div>${pill}
+      <div class="sub">${s ? 'mediaan ' + money(s.mediaan, cur) : 'salaris: te weinig data'}</div></div>`;
+  }).join('');
+}
+
+// ---------- tijdreeksen ----------
+function renderWeekly() {
+  const c = state.country, w = DATA.wekelijks, d = w.data[c];
+  const total = ROLES.reduce((a, r) => a + d[r].reduce((x, y) => x + y, 0), 0);
+  if (!total) return empty('ch-weekly', 'Nog geen vacatures verzameld voor dit land.');
+  const labels = w.weken.map(fmtDate);
+  draw('ch-weekly', { type: 'line', data: { labels, datasets: ROLES.map(r => line(DATA.meta.rollen[r], d[r], css(ROLE_SLOT[r]))) }, options: baseOpts() });
+  legend('lg-weekly', ROLES.map(r => [DATA.meta.rollen[r], css(ROLE_SLOT[r])]));
+}
+function renderVolume() {
+  const c = state.country, v = DATA.volume, d = (v.data || {})[c];
+  if (!d || !v.datums.length) return empty('ch-volume', 'Nog geen Adzuna-tellingen. Deze grafiek vult zich na de eerste runs met een Adzuna-key.');
+  draw('ch-volume', { type: 'line', data: { labels: v.datums.map(fmtDate), datasets: ROLES.map(r => line(DATA.meta.rollen[r], d[r], css(ROLE_SLOT[r]))) }, options: baseOpts() });
+  legend('lg-volume', ROLES.map(r => [DATA.meta.rollen[r], css(ROLE_SLOT[r])]));
+}
+
+// ---------- Indeed ----------
+const IDX_ORDER = ['NL · Alle vacatures', 'US · Data & Analytics', 'DE · Data & Analytics', 'US · Software Development', 'US · Alle vacatures', 'GB · Data & Analytics', 'GB · Software Development', 'DE · Software Development'];
+const idxColor = name => css(`--r${IDX_ORDER.indexOf(name) + 1}`);
+function renderIndeed() {
+  const ix = DATA.indeed;
+  const names = IDX_ORDER.filter(n => ix.reeksen && ix.reeksen[n]);
+  if (!names.length) return empty('ch-indeed', 'Indeed-data nog niet opgehaald.');
+  el('idx-chips').innerHTML = names.map(n => `<button type="button" class="chip" id="chip-${IDX_ORDER.indexOf(n)}" data-n="${esc(n)}" aria-pressed="${state.idx.has(n)}"><i class="dot" style="background:${idxColor(n)}"></i>${esc(n)}</button>`).join('');
+  const ds = names.filter(n => state.idx.has(n)).map(n => line(n, ix.reeksen[n], idxColor(n), n.startsWith('NL') ? { borderWidth: 3 } : {}));
+  const o = baseOpts(); o.scales.y.beginAtZero = false;
+  draw('ch-indeed', { type: 'line', data: { labels: ix.datums.map(fmtDate), datasets: ds }, options: o });
+}
+
+// ---------- skills ----------
+function renderSkills() {
+  const c = state.country, r = state.role, s = DATA.skills[c][r];
+  const label = r === '_alle' ? 'alle data-rollen' : DATA.meta.rollen[r];
+  el('skills-title').textContent = `Top skills · ${label}`;
+  el('skills-note').textContent = `Aandeel vacatures (laatste ${DATA.meta.venster_dagen} dagen) dat een skill noemt, ${DATA.meta.landen[c]}, n = ${nf.format(s.n)}. Bij vacatures van Adzuna is alleen een ingekorte tekst beschikbaar, dus aandelen zijn een ondergrens.`;
+  const entries = Object.entries(s.aandeel).slice(0, 15);
+  if (s.n < 5 || !entries.length) return empty('ch-skills', 'Te weinig vacatures voor deze selectie.');
+  const col = css(c === 'nl' ? '--nl' : '--us');
+  const o = baseOpts({ indexAxis: 'y', interaction: { mode: 'nearest', axis: 'y', intersect: false } });
+  o.scales = { x: { beginAtZero: true, max: 100, grid: { color: css('--grid') }, ticks: { color: css('--ink-2'), callback: v => v + '%', font: { family: css('--f-mono'), size: 11 } }, border: { display: false } },
+               y: { grid: { display: false }, ticks: { color: css('--ink'), font: { family: css('--f-body'), size: 12.5 } }, border: { color: css('--rule') } } };
+  o.plugins.tooltip.callbacks = { label: ctx => ` ${ctx.parsed.x}% van de vacatures` };
+  draw('ch-skills', { type: 'bar', data: { labels: entries.map(e => e[0]), datasets: [{ data: entries.map(e => e[1]), backgroundColor: col, borderRadius: 4, barPercentage: 0.7, categoryPercentage: 0.9 }] }, options: o });
+}
+function renderLead() {
+  const rows = DATA.voorsprong;
+  if (!rows.length) { el('lead').innerHTML = '<div class="empty">Nog te weinig vacatures in beide landen (minimaal 20 per land).</div>'; return; }
+  const max = Math.max(...rows.map(r => Math.max(r.us, r.nl)), 1);
+  el('lead').innerHTML = `<table><thead><tr><th>Skill</th><th class="n">VS</th><th class="n">NL</th><th style="min-width:120px">VS vs NL</th><th class="n">Verschil</th></tr></thead><tbody>` +
+    rows.map(r => `<tr><td>${esc(r.skill)}</td><td class="n">${r.us}%</td><td class="n">${r.nl}%</td>
+      <td><div class="bar"><i style="left:0;width:${r.us / max * 100}%;background:var(--us);opacity:.85;height:4px;top:0"></i><i style="left:0;width:${r.nl / max * 100}%;background:var(--nl);height:4px;top:4px"></i></div></td>
+      <td class="n">${r.verschil > 0 ? '+' : ''}${r.verschil} pp</td></tr>`).join('') + '</tbody></table>' +
+    `<div class="legend" style="margin-top:8px"><span><i class="dot" style="background:var(--us)"></i>Verenigde Staten</span><span><i class="dot" style="background:var(--nl)"></i>Nederland</span></div>`;
+}
+
+// ---------- Hacker News ----------
+function renderHN() {
+  const h = DATA.hn;
+  if (!h.maanden.length) { empty('ch-hn-skills', 'Nog geen Hacker News-data.'); empty('ch-hn-roles', 'Nog geen Hacker News-data.'); return; }
+  const labels = h.maanden.map(fmtMonth);
+  const sk = Object.keys(h.skills).slice(0, 8);
+  const pct = o => { o.scales.y.ticks.callback = v => v + '%'; o.plugins.tooltip.callbacks = { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%` }; return o; };
+  draw('ch-hn-skills', { type: 'line', data: { labels, datasets: sk.map((s, i) => line(s, h.skills[s], css(`--r${i + 1}`))) }, options: pct(baseOpts()) });
+  legend('lg-hns', sk.map((s, i) => [s, css(`--r${i + 1}`)]));
+  draw('ch-hn-roles', { type: 'line', data: { labels, datasets: ROLES.map(r => line(DATA.meta.rollen[r], h.rollen[r], css(ROLE_SLOT[r]))) }, options: pct(baseOpts()) });
+  legend('lg-hnr', ROLES.map(r => [DATA.meta.rollen[r], css(ROLE_SLOT[r])]));
+}
+
+// ---------- salaris, werkvorm, senioriteit ----------
+function renderSalary() {
+  const c = state.country, sal = DATA.salaris.jaar[c], cur = DATA.salaris.valuta[c];
+  el('sal-title').textContent = `Bruto jaarsalaris · ${DATA.meta.landen[c]}`;
+  el('sal-note').textContent = 'Alleen vacatures met een vermeld salaris (laatste 180 dagen). De balk toont de middelste helft (25e–75e percentiel), het streepje de mediaan.';
+  const vals = ROLES.map(r => sal[r]).filter(Boolean);
+  if (!vals.length) { el('salary').innerHTML = '<div class="empty">Nog te weinig vacatures met salaris.</div>'; return; }
+  const lo = Math.min(...vals.map(v => v.p25)) * 0.9, hi = Math.max(...vals.map(v => v.p75)) * 1.05;
+  const x = v => (v - lo) / (hi - lo) * 100;
+  let html = `<table><thead><tr><th>Rol</th><th class="n">P25</th><th class="n">Mediaan</th><th class="n">P75</th><th style="min-width:120px">Spreiding</th><th class="n">n</th></tr></thead><tbody>` +
+    ROLES.map(r => { const s = sal[r]; const name = `<span style="display:inline-flex;gap:7px;align-items:center"><i class="dot" style="background:var(${ROLE_SLOT[r]})"></i>${esc(DATA.meta.rollen[r])}</span>`;
+      if (!s) return `<tr><td>${name}</td><td class="n muted" colspan="4">te weinig data</td><td class="n">–</td></tr>`;
+      return `<tr><td>${name}</td><td class="n">${money(s.p25, cur)}</td><td class="n"><b>${money(s.mediaan, cur)}</b></td><td class="n">${money(s.p75, cur)}</td>
+        <td><div class="bar"><i style="left:${x(s.p25)}%;width:${x(s.p75) - x(s.p25)}%;background:var(${ROLE_SLOT[r]});opacity:.55"></i><i style="left:calc(${x(s.mediaan)}% - 1px);width:3px;background:var(--ink);top:-3px;bottom:-3px"></i></div></td><td class="n">${s.n}</td></tr>`; }).join('') + '</tbody></table>';
+  const h = DATA.salaris.uurtarief_nl;
+  if (c === 'nl' && h) html += `<p class="muted" style="margin-top:10px;font-size:13.5px">Uurtarieven (vaak freelance/detachering): mediaan ${money(h.mediaan, 'EUR')}, middelste helft ${money(h.p25, 'EUR')}–${money(h.p75, 'EUR')} (n = ${h.n}).</p>`;
+  el('salary').innerHTML = html;
+}
+const SEN = [['junior', 'Junior', '--r1'], ['medior', 'Medior', '--r3'], ['senior', 'Senior', '--r2'], ['lead', 'Lead/principal', '--r7'], ['stage', 'Stage/trainee', '--r4']];
+function renderSeniority() {
+  const c = state.country, s = DATA.senioriteit[c], wm = DATA.werkvorm[c];
+  const wmL = { hybride: 'hybride', remote: 'volledig remote', op_kantoor: 'op kantoor' };
+  el('workmode').innerHTML = wm.n ? Object.entries(wmL).map(([k, l]) => `<span><b style="font-family:var(--f-mono)">${wm.aandeel[k] || 0}%</b>&nbsp;${l}</span>`).join('') + `<span class="muted">(n = ${nf.format(wm.n)} met bekende werkvorm)</span>` : '<span class="muted">Werkvorm: nog geen data</span>';
+  const roles = ROLES.filter(r => s[r].n >= 5);
+  if (!roles.length) return empty('ch-sen', 'Te weinig vacatures met herkenbare senioriteit.');
+  const o = baseOpts({ indexAxis: 'y', interaction: { mode: 'nearest', axis: 'y', intersect: true } });
+  o.scales = { x: { stacked: true, max: 100, grid: { color: css('--grid') }, ticks: { color: css('--ink-2'), callback: v => v + '%', font: { family: css('--f-mono'), size: 11 } }, border: { display: false } },
+               y: { stacked: true, grid: { display: false }, ticks: { color: css('--ink'), font: { family: css('--f-body'), size: 12.5 } } } };
+  o.plugins.tooltip.callbacks = { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.x}%` };
+  draw('ch-sen', { type: 'bar', data: { labels: roles.map(r => DATA.meta.rollen[r]), datasets: SEN.map(([k, l, v]) => ({ label: l, data: roles.map(r => s[r].aandeel[k] || 0), backgroundColor: css(v), borderColor: css('--surface'), borderWidth: { right: 2 }, borderSkipped: false, barPercentage: 0.7 })) }, options: o });
+  legend('lg-sen', SEN.map(([, l, v]) => [l, css(v)]));
+}
+
+// ---------- werkgevers & CBS ----------
+function renderEmployers() {
+  const e = DATA.werkgevers_nl;
+  if (!e.length) { el('employers').innerHTML = '<div class="empty">Nog geen Nederlandse vacatures.</div>'; return; }
+  const max = e[0].n;
+  el('employers').innerHTML = `<table><tbody>` + e.map(x => `<tr><td>${esc(x.naam)}</td><td style="width:45%"><div class="bar"><i style="left:0;width:${x.n / max * 100}%;background:var(--nl)"></i></div></td><td class="n">${x.n}</td></tr>`).join('') + '</tbody></table>';
+}
+function renderCBS() {
+  const rows = DATA.cbs;
+  if (!rows.length) { el('cbs').innerHTML = '<div class="empty">CBS-data nog niet opgehaald.</div>'; return; }
+  const measures = [...new Set(rows.map(r => r.measure))];
+  const sectors = [...new Set(rows.map(r => r.sector))];
+  const periods = [...new Set(rows.map(r => r.period))].sort().slice(-8).reverse();
+  const get = (p, s, m) => { const r = rows.find(x => x.period === p && x.sector === s && x.measure === m); return r ? nf.format(+r.value) : '–'; };
+  const fp = p => p.replace(/(\d{4})KW0?(\d)/, '$1 K$2');
+  el('cbs').innerHTML = `<table><thead><tr><th>Kwartaal</th>${sectors.flatMap(s => measures.map(m => `<th class="n">${esc(s)}<br>${esc(m)}</th>`)).join('')}</tr></thead><tbody>` +
+    periods.map(p => `<tr><td>${fp(p)}</td>${sectors.flatMap(s => measures.map(m => `<td class="n">${get(p, s, m)}</td>`)).join('')}</tr>`).join('') + '</tbody></table>';
+}
+
+// ---------- interactie ----------
+function renderCountry() {
+  document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.c === state.country)));
+  renderTiles(); renderWeekly(); renderVolume(); renderSkills(); renderSalary(); renderSeniority();
+}
+function renderAll() { renderCountry(); renderIndeed(); renderLead(); renderHN(); }
+
+document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+  state.country = b.dataset.c; try { localStorage.setItem('dm-country', state.country); } catch (e) {}
+  renderCountry();
+}));
+el('role-sel').addEventListener('change', e => { state.role = e.target.value; renderSkills(); });
+el('idx-chips').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  const n = b.dataset.n; state.idx.has(n) ? state.idx.delete(n) : state.idx.add(n);
+  renderIndeed();
+});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
+new MutationObserver(renderAll).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+renderMeta();
+if (window.Chart) { Chart.defaults.font.family = css('--f-body'); renderAll(); }
+else { document.querySelectorAll('.chart').forEach(c => c.innerHTML = '<div class="empty">Grafiekbibliotheek kon niet laden.</div>'); renderTiles(); renderLead(); renderSalary(); renderEmployers(); renderCBS(); }
+renderEmployers(); renderCBS();
+</script>
