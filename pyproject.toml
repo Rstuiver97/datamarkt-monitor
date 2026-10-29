@@ -1,0 +1,10 @@
+[project]
+name = "marktmonitor"
+version = "1.0.0"
+description = "Geautomatiseerde arbeidsmarktmonitor voor data- en AI-rollen (NL + VS)"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
