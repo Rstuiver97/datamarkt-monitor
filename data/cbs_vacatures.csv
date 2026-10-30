@@ -117,6 +117,7 @@ period,sector,measure,value
 2025KW04,A-U Alle economische activiteiten,Vacaturegraad,40
 2026KW01,A-U Alle economische activiteiten,Vacaturegraad,41
 2026KW02,A-U Alle economische activiteiten,Vacaturegraad,42
+2026KW03,A-U Alle economische activiteiten,Vacaturegraad,41
 1997KW01,J Informatie en communicatie,Vacaturegraad,25
 1997KW02,J Informatie en communicatie,Vacaturegraad,32
 1997KW03,J Informatie en communicatie,Vacaturegraad,31
@@ -235,3 +236,4 @@ period,sector,measure,value
 2025KW04,J Informatie en communicatie,Vacaturegraad,50
 2026KW01,J Informatie en communicatie,Vacaturegraad,52
 2026KW02,J Informatie en communicatie,Vacaturegraad,51
+2026KW03,J Informatie en communicatie,Vacaturegraad,48
