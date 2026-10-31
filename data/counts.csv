@@ -65,3 +65,36 @@ date,source,country,query,count
 2026-10-30,ats,us,data_engineer,20
 2026-10-30,ats,us,data_scientist,100
 2026-10-30,ats,us,ml_engineer,105
+2026-10-31,adzuna,nl,ai engineer,182
+2026-10-31,adzuna,nl,analytics engineer,18
+2026-10-31,adzuna,nl,bi consultant,10
+2026-10-31,adzuna,nl,bi developer,7
+2026-10-31,adzuna,nl,business intelligence,54
+2026-10-31,adzuna,nl,data analist,99
+2026-10-31,adzuna,nl,data analyst,99
+2026-10-31,adzuna,nl,data engineer,221
+2026-10-31,adzuna,nl,data scientist,59
+2026-10-31,adzuna,nl,machine learning engineer,28
+2026-10-31,adzuna,nl,ml engineer,10
+2026-10-31,adzuna,nl,mlops,4
+2026-10-31,adzuna,nl,power bi,5
+2026-10-31,adzuna,us,ai engineer,19533
+2026-10-31,adzuna,us,analytics engineer,1723
+2026-10-31,adzuna,us,bi developer,303
+2026-10-31,adzuna,us,business intelligence,1448
+2026-10-31,adzuna,us,data analyst,5740
+2026-10-31,adzuna,us,data engineer,17516
+2026-10-31,adzuna,us,data scientist,6484
+2026-10-31,adzuna,us,machine learning engineer,4054
+2026-10-31,adzuna,us,ml engineer,2364
+2026-10-31,adzuna,us,mlops,183
+2026-10-31,adzuna,us,power bi,302
+2026-10-31,ats,nl,data_analyst,2
+2026-10-31,ats,nl,data_engineer,5
+2026-10-31,ats,nl,data_scientist,2
+2026-10-31,ats,nl,ml_engineer,3
+2026-10-31,ats,us,analytics_engineer,6
+2026-10-31,ats,us,data_analyst,21
+2026-10-31,ats,us,data_engineer,21
+2026-10-31,ats,us,data_scientist,101
+2026-10-31,ats,us,ml_engineer,107
