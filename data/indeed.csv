@@ -2463,6 +2463,13 @@ date,country,series,index
 2026-10-28,NL,Alle vacatures,115.04
 2026-10-29,NL,Alle vacatures,114.89
 2026-10-30,NL,Alle vacatures,114.75
+2026-10-31,NL,Alle vacatures,114.63
+2026-11-01,NL,Alle vacatures,114.55
+2026-11-02,NL,Alle vacatures,114.58
+2026-11-03,NL,Alle vacatures,114.53
+2026-11-04,NL,Alle vacatures,114.84
+2026-11-05,NL,Alle vacatures,115.04
+2026-11-06,NL,Alle vacatures,115.2
 2020-02-01,US,Alle vacatures,100
 2020-02-02,US,Alle vacatures,100.03
 2020-02-03,US,Alle vacatures,100.05
@@ -4927,6 +4934,13 @@ date,country,series,index
 2026-10-28,US,Alle vacatures,103.84
 2026-10-29,US,Alle vacatures,103.79
 2026-10-30,US,Alle vacatures,103.79
+2026-10-31,US,Alle vacatures,103.75
+2026-11-01,US,Alle vacatures,103.76
+2026-11-02,US,Alle vacatures,103.92
+2026-11-03,US,Alle vacatures,104.02
+2026-11-04,US,Alle vacatures,104.16
+2026-11-05,US,Alle vacatures,104.36
+2026-11-06,US,Alle vacatures,104.56
 2020-02-01,US,Data & Analytics,100
 2020-02-02,US,Data & Analytics,99.97
 2020-02-03,US,Data & Analytics,99.84
@@ -7391,6 +7405,13 @@ date,country,series,index
 2026-10-28,US,Data & Analytics,61.74
 2026-10-29,US,Data & Analytics,61.81
 2026-10-30,US,Data & Analytics,61.75
+2026-10-31,US,Data & Analytics,61.79
+2026-11-01,US,Data & Analytics,61.97
+2026-11-02,US,Data & Analytics,62.15
+2026-11-03,US,Data & Analytics,62.27
+2026-11-04,US,Data & Analytics,62.37
+2026-11-05,US,Data & Analytics,62.25
+2026-11-06,US,Data & Analytics,62.09
 2020-02-01,US,Software Development,100
 2020-02-02,US,Software Development,99.84
 2020-02-03,US,Software Development,99.73
@@ -9855,6 +9876,13 @@ date,country,series,index
 2026-10-28,US,Software Development,81.23
 2026-10-29,US,Software Development,81.49
 2026-10-30,US,Software Development,81.58
+2026-10-31,US,Software Development,81.57
+2026-11-01,US,Software Development,81.62
+2026-11-02,US,Software Development,81.67
+2026-11-03,US,Software Development,81.59
+2026-11-04,US,Software Development,81.62
+2026-11-05,US,Software Development,81.45
+2026-11-06,US,Software Development,81.4
 2020-02-01,DE,Alle vacatures,100
 2020-02-02,DE,Alle vacatures,99.92
 2020-02-03,DE,Alle vacatures,99.87
@@ -12319,6 +12347,13 @@ date,country,series,index
 2026-10-28,DE,Alle vacatures,105.17
 2026-10-29,DE,Alle vacatures,105.21
 2026-10-30,DE,Alle vacatures,105.11
+2026-10-31,DE,Alle vacatures,104.93
+2026-11-01,DE,Alle vacatures,104.81
+2026-11-02,DE,Alle vacatures,104.84
+2026-11-03,DE,Alle vacatures,104.81
+2026-11-04,DE,Alle vacatures,104.84
+2026-11-05,DE,Alle vacatures,104.81
+2026-11-06,DE,Alle vacatures,104.84
 2020-02-01,DE,Data & Analytics,100
 2020-02-02,DE,Data & Analytics,99.96
 2020-02-03,DE,Data & Analytics,99.92
@@ -14783,6 +14818,13 @@ date,country,series,index
 2026-10-28,DE,Data & Analytics,73.58
 2026-10-29,DE,Data & Analytics,73.65
 2026-10-30,DE,Data & Analytics,73.72
+2026-10-31,DE,Data & Analytics,73.82
+2026-11-01,DE,Data & Analytics,73.82
+2026-11-02,DE,Data & Analytics,73.95
+2026-11-03,DE,Data & Analytics,74.05
+2026-11-04,DE,Data & Analytics,74.12
+2026-11-05,DE,Data & Analytics,74.08
+2026-11-06,DE,Data & Analytics,74
 2020-02-01,DE,Software Development,100
 2020-02-02,DE,Software Development,99.89
 2020-02-03,DE,Software Development,99.77
@@ -17247,6 +17289,13 @@ date,country,series,index
 2026-10-28,DE,Software Development,48.82
 2026-10-29,DE,Software Development,48.84
 2026-10-30,DE,Software Development,48.75
+2026-10-31,DE,Software Development,48.64
+2026-11-01,DE,Software Development,48.52
+2026-11-02,DE,Software Development,48.5
+2026-11-03,DE,Software Development,48.52
+2026-11-04,DE,Software Development,48.55
+2026-11-05,DE,Software Development,48.54
+2026-11-06,DE,Software Development,48.56
 2020-02-01,GB,Data & Analytics,100
 2020-02-02,GB,Data & Analytics,99.9
 2020-02-03,GB,Data & Analytics,99.76
@@ -19711,6 +19760,13 @@ date,country,series,index
 2026-10-28,GB,Data & Analytics,50.08
 2026-10-29,GB,Data & Analytics,50.04
 2026-10-30,GB,Data & Analytics,49.87
+2026-10-31,GB,Data & Analytics,49.65
+2026-11-01,GB,Data & Analytics,49.49
+2026-11-02,GB,Data & Analytics,49.54
+2026-11-03,GB,Data & Analytics,49.48
+2026-11-04,GB,Data & Analytics,49.59
+2026-11-05,GB,Data & Analytics,49.57
+2026-11-06,GB,Data & Analytics,49.77
 2020-02-01,GB,Software Development,100
 2020-02-02,GB,Software Development,99.99
 2020-02-03,GB,Software Development,99.94
@@ -22175,3 +22231,10 @@ date,country,series,index
 2026-10-28,GB,Software Development,61.5
 2026-10-29,GB,Software Development,61.46
 2026-10-30,GB,Software Development,61.28
+2026-10-31,GB,Software Development,61.2
+2026-11-01,GB,Software Development,61.12
+2026-11-02,GB,Software Development,61.07
+2026-11-03,GB,Software Development,60.97
+2026-11-04,GB,Software Development,60.9
+2026-11-05,GB,Software Development,60.85
+2026-11-06,GB,Software Development,60.93
