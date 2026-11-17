@@ -215,8 +215,99 @@ QUERY_ROLE = {
     "power bi": "bi_consultant",
 }
 
+# Volumes per rol: welke Adzuna-zoektermen tellen mee. Synoniemen die bij
+# Adzuna dezelfde vacatures opleveren (data analist/data analyst) tellen één
+# keer: per rol wordt per land het maximum van de alias-groep genomen.
+VOLUME_QUERIES = {
+    "data_engineer": [["data engineer"]],
+    "analytics_engineer": [["analytics engineer"]],
+    "ml_engineer": [["machine learning engineer"], ["ml engineer"], ["mlops"]],
+    "data_scientist": [["data scientist"]],
+    "data_analyst": [["data analyst", "data analist"]],
+    "bi_consultant": [["business intelligence"], ["bi developer"], ["bi consultant"], ["power bi"]],
+}
+# 'AI engineer' als titelzoekterm is breed (ook software engineers met AI in de
+# titel) en wordt daarom apart getoond.
+AI_TERM_QUERY = "ai engineer"
+
 # Valuta per land en wisselkoers naar EUR (grof, alleen voor vergelijking).
 CURRENCY = {"nl": "EUR", "us": "USD"}
 USD_TO_EUR = 0.92
 
 COUNTRY_LABELS = {"nl": "Nederland", "us": "Verenigde Staten"}
+
+# --------------------------------------------------------------------------
+# AI-blootstelling (Groenewegen et al., online appendix)
+# --------------------------------------------------------------------------
+# Beroepsgroepen (BRC 2014) die sterk in aanmerking komen voor AI, met de
+# onderliggende beroepen uit de appendix. De namen worden in de CBS-tabel
+# gezocht op titel (zonder de viercijferige code), dus ze moeten de
+# CBS-naam beginnen.
+AI_SOURCE = "Groenewegen et al., online appendix: beroepsgroepen en beroepen die sterk in aanmerking komen voor AI"
+AI_GROUPS = {
+    "Accountants": ["Accountants"],
+    "Adviseurs marketing, public relations en sales": [
+        "Specialisten marketing, sales en public relations z.n.d.", "Specialisten public relations",
+        "Specialisten reclame en marketing", "Vertegenwoordigers en accountmanagers industrie",
+        "Vertegenwoordigers informatie- en communicatietechnologie"],
+    "Auteurs en taalkundigen": [
+        "Auteurs, journalisten en taalkundigen z.n.d.", "Auteurs, technisch schrijvers",
+        "Vertalers, tolken en andere taalkundigen"],
+    "Bibliothecarissen en conservators": [
+        "Archivarissen en conservators", "Bibliothecarissen",
+        "Bibliothecarissen, archivarissen en conservators z.n.d."],
+    "Boekhouders": [
+        "Actuarieel, wiskundig en statistisch analisten",
+        "Boekhouders, financieel administrateurs en assistent-accountants",
+        "Effecten- en valutahandelaren en -makelaars", "Financieel en wiskundig vakspecialisten z.n.d.",
+        "Medewerkers kredieten en leningen", "Taxateurs en schade-experts"],
+    "Boekhoudkundig medewerkers": [
+        "Administratief medewerkers statistiek, financiën en verzekeringen",
+        "Boekhoudkundig medewerkers", "Boekhoudkundig medewerkers z.n.d.", "Loonadministrateurs"],
+    "Databank- en netwerkspecialisten": [
+        "Databank- en netwerkspecialisten n.e.g.", "Databank- en netwerkspecialisten z.n.d.",
+        "Econometrist", "Ontwerpers en beheerders van databases"],
+    "Financieel specialisten en economen": [
+        "Economen", "Financieel analisten", "Financieel en beleggingsadviseurs",
+        "Financieel specialisten z.n.d."],
+    "Journalisten": ["Journalisten"],
+    "Receptionisten en telefonisten": [
+        "Callcentermedewerkers inbound", "Hotelreceptionisten", "Informatieverstrekkers",
+        "Interviewers voor enquêtes en marktonderzoek", "Klantenvoorlichters n.e.g.",
+        "Klantvoorlichters z.n.d.", "Receptionisten, algemeen",
+        "Reisconsulenten en reisbureaumedewerkers", "Telefonisten"],
+    "Secretaresses": [
+        "Medewerkers data-invoer", "Secretarieel medewerkers, algemeen",
+        "Typisten en medewerkers data-invoer z.n.d.", "Typisten en tekstverwerkers"],
+    "Software- en applicatieontwikkelaars": [
+        "Applicatieprogrammeurs", "Software- en applicatieontwikkelaars en -analisten n.e.g.",
+        "Software- en applicatieontwikkelaars en -analisten z.n.d.", "Softwareontwikkelaars",
+        "Specialisten informatie- en communicatietechnologie z.n.d.",
+        "Systeemanalisten en ICT-adviseurs", "Web- en multimediaontwikkelaars"],
+}
+# Groepen waar de datarollen uit deze monitor grotendeels onder vallen.
+AI_GROUPS_DATA = ["Databank- en netwerkspecialisten", "Software- en applicatieontwikkelaars",
+                  "Financieel specialisten en economen"]
+# Moment vanaf wanneer generatieve AI breed beschikbaar was (ChatGPT, nov 2022).
+AI_BREAK_YEAR = 2022
+AI_BASE_YEAR = 2015
+
+# CBS-tabellen, in volgorde van voorkeur (nieuwste eerst).
+CBS_BEROEP_TABLES = ["86320NED", "85276NED"]
+
+# Eurostat: ISCO-08 hoofdgroepen (2-cijferig) waar de beroepen uit de
+# appendix grotendeels onder vallen. Dit is een benadering: deze ISCO-groepen
+# bevatten ook beroepen die niet in de appendix staan.
+EUROSTAT_ISCO = {
+    "OC24": "Specialisten bedrijfsvoering en administratie",
+    "OC25": "Specialisten ICT",
+    "OC26": "Juridische, sociale en culturele specialisten",
+    "OC33": "Vakspecialisten bedrijfsvoering en administratie",
+    "OC41": "Algemeen administratief en secretariaat",
+    "OC42": "Klantenservice en receptie",
+    "OC43": "Financieel en logistiek administratief",
+}
+EUROSTAT_GEO = {
+    "NL": "Nederland", "EU27_2020": "EU-27", "DE": "Duitsland", "BE": "België",
+    "FR": "Frankrijk", "DK": "Denemarken", "SE": "Zweden", "IE": "Ierland",
+}

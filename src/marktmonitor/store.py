@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import os
 from pathlib import Path
 
@@ -39,6 +40,21 @@ def write_csv(name: str, rows: list[dict], fields: list[str]) -> None:
         for r in rows:
             w.writerow({k: ("" if r.get(k) is None else r.get(k)) for k in fields})
     tmp.replace(p)
+
+
+def read_json(name: str) -> dict:
+    p = path(name)
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except ValueError:
+        return {}
+
+
+def write_json(name: str, data) -> None:
+    p = path(name)
+    p.write_text(json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
 
 
 # --------------------------------------------------------------------------

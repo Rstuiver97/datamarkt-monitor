@@ -4,6 +4,18 @@ on:
   schedule:
     - cron: "17 5 * * *"   # dagelijks om 05:17 UTC (06:17/07:17 NL-tijd)
   workflow_dispatch:        # handmatig starten via het tabblad Actions
+    inputs:
+      force:
+        description: "CBS en Eurostat ook opnieuw ophalen als er niets gewijzigd is"
+        type: boolean
+        default: false
+  push:                     # na een code-wijziging direct opnieuw draaien
+    branches: [main]
+    paths:
+      - "src/**"
+      - "templates/**"
+      - "config/**"
+      - ".github/workflows/**"
 
 permissions:
   contents: write
@@ -41,7 +53,7 @@ jobs:
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
           ADZUNA_MAX_CALLS: ${{ vars.ADZUNA_MAX_CALLS || '30' }}
           PYTHONPATH: src
-        run: python -m marktmonitor run
+        run: python -m marktmonitor run ${{ inputs.force && '--force' || '' }}
 
       - name: Data opslaan in de repository
         run: |
@@ -49,6 +61,7 @@ jobs:
           git config user.email "marktmonitor-bot@users.noreply.github.com"
           git add data/
           git diff --cached --quiet || git commit -m "Data-update $(date -u +%Y-%m-%d)"
+          git pull --rebase --autostash origin main
           git push
 
       - name: Pages configureren

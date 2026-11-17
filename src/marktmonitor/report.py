@@ -97,16 +97,57 @@ def build(today: date | None = None, demo: bool = False) -> dict:
 
     # ---- Adzuna totaal-aantallen (marktvolume) --------------------------
     counts = [r for r in store.read_csv("counts.csv") if r["source"] == "adzuna"]
-    vol = defaultdict(lambda: defaultdict(Counter))
+    raw = defaultdict(dict)   # (land, query) -> {datum: n}
     for r in counts:
-        role = config.QUERY_ROLE.get(r["query"])
-        if role:
-            vol[r["country"]][role][r["date"]] += int(r["count"] or 0)
+        raw[(r["country"], r["query"])][r["date"]] = int(r["count"] or 0)
     dates = sorted({r["date"] for r in counts})
-    out["volume"] = {
-        "datums": dates,
-        "data": {c: {r: [vol[c][r].get(d) for d in dates] for r in ROLES} for c in vol},
-    }
+    vol: dict = {}
+    for c in config.COUNTRY_LABELS:
+        vol[c] = {}
+        for role, alias_groups in config.VOLUME_QUERIES.items():
+            series = []
+            for d in dates:
+                parts = []
+                for aliases in alias_groups:
+                    vals = [raw[(c, q)].get(d) for q in aliases if raw[(c, q)].get(d) is not None]
+                    parts.append(max(vals) if vals else None)
+                # ontbreekt een zoekterm op een dag, dan liever een gat dan een dip
+                series.append(sum(parts) if parts and None not in parts else None)
+            vol[c][role] = series
+        vol[c]["_ai_term"] = [raw[(c, config.AI_TERM_QUERY)].get(d) for d in dates]
+
+    def last_val(s):
+        return next((x for x in reversed(s) if x is not None), None)
+
+    def first_val(s):
+        return next((x for x in s if x is not None), None)
+
+    mix = {}
+    for c in vol:
+        latest = {r: last_val(vol[c][r]) or 0 for r in ROLES}
+        tot = sum(latest.values())
+        mix[c] = {"totaal": tot, "aandeel": {r: _pct(v, tot) for r, v in latest.items()},
+                  "aantal": latest,
+                  "groei": {r: (round(100 * (last_val(vol[c][r]) / first_val(vol[c][r]) - 1), 1)
+                                if first_val(vol[c][r]) and last_val(vol[c][r]) is not None else None)
+                            for r in ROLES + ["_ai_term"]}}
+    out["volume"] = {"datums": dates, "data": vol, "mix": mix}
+
+    # ---- GenAI in vacatureteksten, per week ---------------------------------
+    genai = {k for k, v in config.SKILLS.items() if v[0] == "GenAI"}
+    g_week = {}
+    for c in config.COUNTRY_LABELS:
+        tot_w, hit_w = Counter(), Counter()
+        for p in postings:
+            fs = _d(p["first_seen"])
+            if p["country"] != c or not fs or fs < start or fs >= this_monday:
+                continue
+            wk = (fs - timedelta(days=fs.weekday())).isoformat()
+            tot_w[wk] += 1
+            if genai & set((p.get("skills") or "").split(";")):
+                hit_w[wk] += 1
+        g_week[c] = [(_pct(hit_w[w], tot_w[w]) if tot_w[w] >= 10 else None) for w in weeks]
+    out["genai_wekelijks"] = g_week
 
     # ---- Indeed index ----------------------------------------------------
     indeed = store.read_csv("indeed.csv")
@@ -205,6 +246,11 @@ def build(today: date | None = None, demo: bool = False) -> dict:
 
     # ---- CBS -----------------------------------------------------------
     out["cbs"] = store.read_csv("cbs_vacatures.csv")
+
+    # ---- AI-blootstelling (CBS beroepen + Eurostat) ----------------------
+    from . import analysis_ai
+    out["ai"] = analysis_ai.build()
+    out["meta"]["versies"] = store.read_json("meta/versions.json")
     return out
 
 

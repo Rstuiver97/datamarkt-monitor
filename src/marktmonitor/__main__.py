@@ -16,7 +16,8 @@ from datetime import date
 from . import classify, report, store
 from .collectors import log
 
-ALL_SOURCES = ["indeed", "hn", "cbs", "ats", "adzuna"]
+FORCE = False
+ALL_SOURCES = ["indeed", "hn", "cbs", "cbs_beroepen", "eurostat", "ats", "adzuna"]
 
 
 def collect(sources: list[str]) -> int:
@@ -34,6 +35,12 @@ def collect(sources: list[str]) -> int:
             elif src == "cbs":
                 from .collectors import cbs
                 cbs.collect()
+            elif src == "cbs_beroepen":
+                from .collectors import cbs_beroepen
+                cbs_beroepen.collect(force=FORCE)
+            elif src == "eurostat":
+                from .collectors import eurostat
+                eurostat.collect(force=FORCE)
             elif src == "ats":
                 from .collectors import ats
                 p, c = ats.collect(today)
@@ -68,10 +75,15 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("report")
     r = sub.add_parser("run")
     r.add_argument("sources", nargs="*", default=ALL_SOURCES)
+    for p_ in (c, r):
+        p_.add_argument("--force", action="store_true",
+                        help="haal CBS/Eurostat ook op als er niets gewijzigd is")
     sub.add_parser("validate-companies")
     sub.add_parser("demo")
     args = ap.parse_args(argv)
 
+    global FORCE
+    FORCE = bool(getattr(args, "force", False))
     if args.cmd in ("collect", "run"):
         failures = collect(args.sources)
         if args.cmd == "run":

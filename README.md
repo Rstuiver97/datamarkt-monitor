@@ -13,6 +13,32 @@ Elke ochtend haalt GitHub Actions vacatures en marktcijfers op, classificeert ze
 - **Beloning**: salarisbanden per rol (alleen uit vacatures die zelf een salaris noemen) en freelance-uurtarieven.
 - **Werkvorm, senioriteit, top-werkgevers** en de CBS-vacaturecijfers voor de ICT-sector.
 
+## AI-blootstelling van de Nederlandse arbeidsmarkt
+
+Het tabblad **AI & werk** combineert de lijst beroepsgroepen die sterk in aanmerking komen voor AI (Groenewegen et al., online appendix) met de CBS Enquête Beroepsbevolking en Eurostat:
+
+- welk deel van alle werkenden in deze 12 beroepsgroepen zit;
+- hoe snel elke groep groeide vóór en na de komst van ChatGPT (2015–2022 tegenover 2022–nu);
+- hoe het aandeel jongeren (tot 25 jaar) zich ontwikkelt: jongeren doen het instapwerk dat AI het eerst raakt;
+- de meest recente kwartalen, en Nederland naast de EU, Duitsland en België.
+
+De kernbevindingen bovenaan worden automatisch uit de cijfers geschreven en bewegen mee met elke nieuwe CBS-publicatie. De lijst met beroepsgroepen staat in `src/marktmonitor/config.py` (`AI_GROUPS`).
+
+## Updateritme
+
+De workflow draait **elke ochtend** en ook direct na elke code-wijziging. Per bron wordt alleen opgehaald wat nieuw kan zijn:
+
+| Bron | Publiceert | Monitor haalt op |
+|---|---|---|
+| Adzuna, werkgeversfeeds | doorlopend | dagelijks |
+| Indeed Hiring Lab | dagelijks, wekelijks ververst | dagelijks |
+| Hacker News | maandelijks | dagelijks de laatste 2 maanden |
+| CBS beroepen (86320NED) | per kwartaal, ca. 4 weken na afloop | dagelijks controleren, alleen ophalen bij een nieuwe versie |
+| CBS vacatures (80567ned) | per kwartaal | dagelijks |
+| Eurostat | jaarlijks, met revisies | wekelijks |
+
+Je hoeft dus nooit met de hand opnieuw te draaien. Wil je toch alles opnieuw laten berekenen (bijvoorbeeld na het aanpassen van de beroepenlijst): *Actions → Datamarkt Monitor → Run workflow*, en vink *force* aan.
+
 ## Kosten
 
 Nul euro, mits je een **openbare** GitHub-repository gebruikt:
@@ -108,12 +134,14 @@ Vacatureteksten worden niet opgeslagen: alleen de afgeleide kenmerken. Dat houdt
 
 ## Status van de collectors
 
-Gebouwd en getest met nep-antwoorden; de Indeed-collector is ook live getest. De Adzuna-, Hacker News-, CBS- en werkgeverscollectors konden vanuit de bouwomgeving niet live worden getest, omdat die geen toegang had tot die websites. Controleer na de eerste run de log in het tabblad *Actions*: elke bron meldt hoeveel rijen hij ophaalde, en een kapotte bron stopt de andere niet.
+Gebouwd en getest met nagebootste antwoorden; de Indeed-collector is ook live getest. De CBS- en Eurostat-collectors slaan na elke run de tabelstructuur op in `data/meta/`, zodat afwijkingen direct te zien zijn. De Adzuna-, Hacker News-, CBS- en werkgeverscollectors konden vanuit de bouwomgeving niet live worden getest, omdat die geen toegang had tot die websites. Controleer na de eerste run de log in het tabblad *Actions*: elke bron meldt hoeveel rijen hij ophaalde, en een kapotte bron stopt de andere niet.
 
 ## Bronnen en licenties
 
 - Indeed Hiring Lab, [Job Postings Index](https://github.com/hiring-lab/job_postings_tracker), CC BY 4.0. Vermeld Indeed Hiring Lab als bron bij hergebruik.
 - [Adzuna API](https://developer.adzuna.com), volgens de Adzuna-gebruiksvoorwaarden.
 - Hacker News via de [Algolia HN Search API](https://hn.algolia.com/api).
-- CBS StatLine, tabel [80567ned](https://www.cbs.nl/nl-nl/cijfers/detail/80567ned), CC BY 4.0.
+- CBS StatLine, tabellen [80567ned](https://www.cbs.nl/nl-nl/cijfers/detail/80567ned), [86320NED](https://www.cbs.nl/nl-nl/cijfers/detail/86320NED) en [85276NED](https://www.cbs.nl/nl-nl/cijfers/detail/85276NED), CC BY 4.0.
+- Eurostat, datasets lfsa_egai2d en isoc_sks_itspt.
+- Groenewegen et al., online appendix: beroepsgroepen en beroepen die sterk in aanmerking komen voor AI.
 - Openbare vacaturefeeds van werkgevers via Greenhouse, Lever, Recruitee, Ashby, Workable en SmartRecruiters.
