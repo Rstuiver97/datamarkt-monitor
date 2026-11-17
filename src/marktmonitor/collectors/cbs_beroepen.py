@@ -26,10 +26,22 @@ QUARTER_FIELDS = ["kwartaal", "beroep_code", "beroep", "waarde"]
 _CODE_RX = re.compile(r"^\s*(\d{1,4})\s+(.*)$")
 
 
-def split_beroep(title: str) -> tuple[str, str]:
-    """'0812 Databank- en netwerkspecialisten' -> ('0812', 'Databank- en ...')."""
+COLLECTOR_VERSION = "2"  # ophogen dwingt bij de volgende run een nieuwe download af
+
+
+def split_beroep(title: str, description: str = "") -> tuple[str, str]:
+    """'0812 Databank- en netwerkspecialisten' -> ('0812', 'Databank- en ...').
+
+    De API kort lange titels af ('Klantenservice medewerkers en re...'). De
+    omschrijving begint met de volledige naam ('Naam: Deze beroepsgroep ...'),
+    dus die gebruiken we als de titel is afgekort.
+    """
     m = _CODE_RX.match(title or "")
-    return (m.group(1), m.group(2).strip()) if m else ("", (title or "").strip())
+    code, name = (m.group(1), m.group(2).strip()) if m else ("", (title or "").strip())
+    full = (description or "").split(":", 1)[0].strip()
+    if full and (name.endswith("...") or name.endswith("…")) and full.lower().startswith(name.rstrip(".… ").lower()[:10]):
+        name = full
+    return code, name
 
 
 def _period(p: str) -> tuple[str, str] | None:
@@ -122,9 +134,9 @@ class Table:
 
 
 def _matches_ai_groups(dims_beroep: list[dict]) -> int:
-    wanted = [g.lower() for g in config.AI_GROUPS]
-    names = [split_beroep(e.get("Title", ""))[1].lower() for e in dims_beroep]
-    return sum(1 for w in wanted if any(n.startswith(w[:22]) for n in names))
+    from ..analysis_ai import match_group
+    names = [split_beroep(e.get("Title", ""), e.get("Description", ""))[1] for e in dims_beroep]
+    return len({g for n in names if (g := match_group(n))})
 
 
 def _collect_table(http, table: str, force: bool) -> bool | None:
@@ -139,7 +151,7 @@ def _collect_table(http, table: str, force: bool) -> bool | None:
         json.dumps(t.meta_dump(), ensure_ascii=False, indent=1), encoding="utf-8")
 
     versions = store.read_json("meta/versions.json")
-    modified = str(t.info.get("Modified") or "")
+    modified = f'{t.info.get("Modified") or ""}|v{COLLECTOR_VERSION}'
     have = (store.DATA_DIR / "cbs_beroepen_jaar.csv").exists()
     if not force and have and versions.get(f"cbs:{table}") == modified:
         log.info("CBS %s: ongewijzigd sinds %s, overgeslagen", table, modified)
@@ -159,7 +171,7 @@ def _collect_table(http, table: str, force: bool) -> bool | None:
         log.warning("CBS %s: te weinig beroepsgroepen herkend, tabel overgeslagen", table)
         return None
 
-    beroep = {e["Key"].strip(): e.get("Title", "") for e in t.dims[k_ber]}
+    beroep = {e["Key"].strip(): split_beroep(e.get("Title", ""), e.get("Description", "")) for e in t.dims[k_ber]}
     pk = {e["Key"].strip(): e for e in t.dims.get(k_pk, [])}
     sex_tot = t.total_key(k_sex) if k_sex else None
     pk_tot = t.total_key(k_pk) if k_pk else None
@@ -187,7 +199,7 @@ def _collect_table(http, table: str, force: bool) -> bool | None:
             val = r.get(topic)
             if not per or per[0] != "jaar" or val is None:
                 continue
-            code, name = split_beroep(beroep.get((r.get(k_ber) or "").strip(), ""))
+            code, name = beroep.get((r.get(k_ber) or "").strip(), ("", ""))
             year_rows.append({
                 "jaar": per[1],
                 "kenmerk_groep": t.group_title(entry) if entry else "Totaal",
@@ -208,7 +220,7 @@ def _collect_table(http, table: str, force: bool) -> bool | None:
             val = r.get(topic)
             if not per or per[0] != "kwartaal" or val is None:
                 continue
-            code, name = split_beroep(beroep.get((r.get(k_ber) or "").strip(), ""))
+            code, name = beroep.get((r.get(k_ber) or "").strip(), ("", ""))
             q_rows.append({"kwartaal": per[1], "beroep_code": code, "beroep": name, "waarde": val})
 
     if not year_rows:

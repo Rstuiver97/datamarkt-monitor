@@ -22,12 +22,16 @@ def _norm(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").strip().lower())
 
 
-def _match_group(name: str) -> str | None:
-    n = _norm(name)
+def match_group(name: str) -> str | None:
+    """Welke appendixgroep hoort bij deze CBS-beroepsnaam (of None)."""
+    n = _norm(name).rstrip(".… ")
+    if len(n) < 6:
+        return None
     for g in config.AI_GROUPS:
-        gn = _norm(g)
-        if n == gn or n.startswith(gn[:22]) or gn.startswith(n[:22]) and len(n) >= 18:
-            return g
+        for alias in config.AI_GROUP_CBS.get(g, [g]):
+            a = _norm(alias)
+            if n == a or (len(n) >= 18 and (a.startswith(n) or n.startswith(a))):
+                return g
     return None
 
 
@@ -123,12 +127,12 @@ def build() -> dict:
     base = config.AI_BASE_YEAR if config.AI_BASE_YEAR in years else years[0]
     brk = config.AI_BREAK_YEAR if config.AI_BREAK_YEAR in years else years[len(years) // 2]
 
-    group_names = {}
+    group_names: dict[str, list[str]] = {}
     for name in tot:
-        g = _match_group(name)
+        g = match_group(name)
         if g and len(codes.get(name, "")) == 4:
-            group_names[g] = name
-    exposed_names = list(group_names.values())
+            group_names.setdefault(g, []).append(name)
+    exposed_names = [n for ns in group_names.values() for n in ns]
 
     def series(kenmerk: str, names: list[str]) -> list[float | None]:
         d = val.get(kenmerk, {})
@@ -162,23 +166,24 @@ def build() -> dict:
     # ---- per groep ---------------------------------------------------------
     groepen = []
     for g, subs in config.AI_GROUPS.items():
-        name = group_names.get(g)
-        if not name:
+        names = group_names.get(g)
+        if not names:
             groepen.append({"naam": g, "gevonden": False, "beroepen": subs})
             continue
-        s = series(totaal_kenmerk, [name])
+        s = series(totaal_kenmerk, names)
         groepen.append({
-            "naam": g, "gevonden": True, "code": codes.get(name, ""),
+            "naam": g, "gevonden": True, "code": " + ".join(codes.get(n, "") for n in names),
+            "cbs_namen": [f"{codes.get(n, '')} {n}" for n in names],
             "data_relevant": g in config.AI_GROUPS_DATA, "beroepen": subs,
             "reeks": s, "laatste": at(s, last),
             "aandeel_werkenden": pct(at(s, last), at(s_tot, last)),
             "groei_voor": cagr(at(s, base), at(s, brk), brk - base),
             "groei_na": cagr(at(s, brk), at(s, last), last - brk),
             "verandering_na": change(at(s, brk), at(s, last)),
-            "aandeel_jong": share(young_k, [name], last),
-            "aandeel_jong_break": share(young_k, [name], brk),
-            "aandeel_hoog": share(edu_high, [name], last),
-            "aandeel_zelfstandig": share(self_emp, [name], last),
+            "aandeel_jong": share(young_k, names, last),
+            "aandeel_jong_break": share(young_k, names, brk),
+            "aandeel_hoog": share(edu_high, names, last),
+            "aandeel_zelfstandig": share(self_emp, names, last),
         })
 
     # ---- jongeren ------------------------------------------------------------
@@ -203,7 +208,10 @@ def build() -> dict:
         vals = [qv.get(n, {}).get(q) for n in exposed_names]
         q_exp.append(round(sum(v for v in vals if v is not None), 1) if any(v is not None for v in vals) else None)
     q_rest = [round(t - e, 1) if t is not None and e is not None else None for t, e in zip(q_tot, q_exp)]
-    q_groups = {g: [qv.get(n, {}).get(q) for q in quarters] for g, n in group_names.items()}
+    def qsum(names, q):
+        vals = [qv.get(n, {}).get(q) for n in names]
+        return round(sum(v for v in vals if v is not None), 1) if any(v is not None for v in vals) else None
+    q_groups = {g: [qsum(ns, q) for q in quarters] for g, ns in group_names.items()}
 
     def roll4(s, i):
         w = s[i - 3:i + 1] if i >= 3 else []
@@ -325,7 +333,9 @@ def findings(a: dict) -> list[dict]:
             "titel": "Grootste omslag: " + ", ".join(w["naam"].lower() for w in worst[:2]),
             "tekst": ("Vergeleken met hun eigen trend vóór 2022 zakte de jaarlijkse groei het sterkst bij "
                       + "; ".join(f"{w['naam'].lower()} ({_fmt(w['groei_voor'])}% → {_fmt(w['groei_na'])}%)" for w in worst)
-                      + ". Het meest versneld: "
+                      + ". "
+                      + (f"Alle {len(found)} groepen groeien langzamer dan vóór {brk}; het minst vertraagd: "
+                         if all(x["_delta"] < 0 for x in found) else "Versneld: ")
                       + "; ".join(f"{b['naam'].lower()} ({_fmt(b['groei_voor'])}% → {_fmt(b['groei_na'])}%)" for b in best) + "."),
         })
         for x in found:
@@ -353,6 +363,8 @@ def findings(a: dict) -> list[dict]:
         })
         if all((d.get("groei_na") or 0) <= 0 for d in data):
             f[-1]["titel"] = "De beroepen achter datarollen groeien niet meer"
+        elif all((d.get("groei_na") or 0) < (d.get("groei_voor") or 0) - 1.5 for d in data):
+            f[-1]["titel"] = "De beroepen achter datarollen groeien nog, maar veel langzamer"
     q = (a.get("kwartaal") or {}).get("yoy") or {}
     if q.get("blootgesteld") is not None:
         b = q["blootgesteld"]

@@ -191,3 +191,16 @@ def test_eurostat_collect_weekly(data, monkeypatch):
     e = analysis_ai._europe()
     assert e["aandeel"]["NL"]["OC25"] == [pytest.approx(4.5, abs=0.05)]
     assert e["ict"]["reeks"]["NL"] == [6.6]
+
+
+def test_truncated_titles_and_renamed_groups():
+    from marktmonitor.collectors.cbs_beroepen import split_beroep
+    assert split_beroep("0433 Klantenservice medewerkers en re...",
+                        "Klantenservice medewerkers en receptionisten: Deze beroepsgroep omvat ...") == \
+        ("0433", "Klantenservice medewerkers en receptionisten")
+    assert analysis_ai.match_group("Klantenservice medewerkers en receptionisten") == "Receptionisten en telefonisten"
+    assert analysis_ai.match_group("Secretarieel medewerkers") == "Secretaresses"
+    assert analysis_ai.match_group("Systeemanalisten en ICT-adviseurs") == "Software- en applicatieontwikkelaars"
+    assert analysis_ai.match_group("Systeembeheerders en netwerkspecialisten") == "Databank- en netwerkspecialisten"
+    assert analysis_ai.match_group("Administratief medewerkers") is None
+    assert analysis_ai.match_group("Totaal") is None

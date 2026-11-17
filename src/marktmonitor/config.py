@@ -285,6 +285,17 @@ AI_GROUPS = {
         "Specialisten informatie- en communicatietechnologie z.n.d.",
         "Systeemanalisten en ICT-adviseurs", "Web- en multimediaontwikkelaars"],
 }
+# Namen in de CBS-tabel als die afwijken van de appendix. De nieuwe CBS-editie
+# (BRC 2014, editie 2025) heeft een paar groepen hernoemd of opgesplitst.
+# Elke appendixgroep mag naar meerdere CBS-groepen verwijzen; ze worden opgeteld.
+AI_GROUP_CBS = {
+    "Bibliothecarissen en conservators": ["Bibliothecarissen en conservatoren", "Bibliothecarissen en conservators"],
+    "Boekhoudkundig medewerkers": ["Financieel administratief medewerkers", "Boekhoudkundig medewerkers"],
+    "Databank- en netwerkspecialisten": ["Systeembeheerders en netwerkspecialisten", "Databank- en netwerkspecialisten"],
+    "Receptionisten en telefonisten": ["Klantenservice medewerkers en receptionisten", "Receptionisten en telefonisten"],
+    "Secretaresses": ["Secretarieel medewerkers", "Secretaresses"],
+    "Software- en applicatieontwikkelaars": ["Software- en applicatieontwikkelaars", "Systeemanalisten en ICT-adviseurs"],
+}
 # Groepen waar de datarollen uit deze monitor grotendeels onder vallen.
 AI_GROUPS_DATA = ["Databank- en netwerkspecialisten", "Software- en applicatieontwikkelaars",
                   "Financieel specialisten en economen"]
