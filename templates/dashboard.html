@@ -430,7 +430,7 @@ function dumbbell(c, rows, o) {
   const labW = narrow ? 0 : Math.min(250, W * 0.36), cols = o.cols || [];
   const colW = narrow ? 0 : cols.length * 66;
   const top = narrow ? 30 : 26, H = top + rows.length * (narrow ? rh + 16 : rh) + 6;
-  const m = { l: labW + 10, r: colW + 14 };
+  const m = { l: labW + 10, r: colW + (narrow ? 14 : 34) };
   const iw = W - m.l - m.r;
   const vals = rows.flatMap(r => [r.a, r.b]).filter(v => v != null);
   let lo = Math.min(0, ...vals), hi = Math.max(0, ...vals);
