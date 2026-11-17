@@ -126,6 +126,7 @@ def build() -> dict:
     last = years[-1]
     base = config.AI_BASE_YEAR if config.AI_BASE_YEAR in years else years[0]
     brk = config.AI_BREAK_YEAR if config.AI_BREAK_YEAR in years else years[len(years) // 2]
+    pre = config.AI_PRE_END if config.AI_PRE_END in years and config.AI_PRE_END > base else brk
 
     group_names: dict[str, list[str]] = {}
     for name in tot:
@@ -177,7 +178,7 @@ def build() -> dict:
             "data_relevant": g in config.AI_GROUPS_DATA, "beroepen": subs,
             "reeks": s, "laatste": at(s, last),
             "aandeel_werkenden": pct(at(s, last), at(s_tot, last)),
-            "groei_voor": cagr(at(s, base), at(s, brk), brk - base),
+            "groei_voor": cagr(at(s, base), at(s, pre), pre - base),
             "groei_na": cagr(at(s, brk), at(s, last), last - brk),
             "verandering_na": change(at(s, brk), at(s, last)),
             "aandeel_jong": share(young_k, names, last),
@@ -232,13 +233,14 @@ def build() -> dict:
         "tabel": versions.get("cbs_beroepen_tabel", ""),
         "tabel_titel": versions.get("cbs_beroepen_titel", ""),
         "jaren": years, "laatste_jaar": last, "basisjaar": base, "breukjaar": brk,
+        "voor_eind": pre, "meetbreuk": config.AI_SERIES_BREAK if config.AI_SERIES_BREAK in years else None,
         "totaal": s_tot, "blootgesteld": s_exp, "overig": s_rest,
         "aandeel": pct(at(s_exp, last), at(s_tot, last)),
         "aandeel_break": pct(at(s_exp, brk), at(s_tot, brk)),
         "groei": {
-            "blootgesteld_voor": cagr(at(s_exp, base), at(s_exp, brk), brk - base),
+            "blootgesteld_voor": cagr(at(s_exp, base), at(s_exp, pre), pre - base),
             "blootgesteld_na": cagr(at(s_exp, brk), at(s_exp, last), last - brk),
-            "overig_voor": cagr(at(s_rest, base), at(s_rest, brk), brk - base),
+            "overig_voor": cagr(at(s_rest, base), at(s_rest, pre), pre - base),
             "overig_na": cagr(at(s_rest, brk), at(s_rest, last), last - brk),
         },
         "groepen": groepen,
@@ -299,6 +301,7 @@ def findings(a: dict) -> list[dict]:
     """Automatisch gegenereerde kernbevindingen (titel + tekst)."""
     f = []
     last, brk, base = a["laatste_jaar"], a["breukjaar"], a["basisjaar"]
+    pre = a.get("voor_eind", brk)
     i_last = a["jaren"].index(last)
     g = a["groei"]
     f.append({
@@ -319,7 +322,7 @@ def findings(a: dict) -> list[dict]:
             titel = f"Sinds {brk} geen duidelijk verschil met de rest van de arbeidsmarkt"
         f.append({
             "titel": titel,
-            "tekst": (f"Van {base} tot {brk} groeiden deze beroepen met {_fmt(g['blootgesteld_voor'])}% per jaar, "
+            "tekst": (f"Van {base} tot {pre} groeiden deze beroepen met {_fmt(g['blootgesteld_voor'])}% per jaar, "
                       f"van {brk} tot {last} met {_fmt(g['blootgesteld_na'])}% per jaar. In de overige beroepen ging dat van "
                       f"{_fmt(g['overig_voor'])}% naar {_fmt(g['overig_na'])}% per jaar."),
         })
@@ -331,10 +334,10 @@ def findings(a: dict) -> list[dict]:
         best = sorted(found, key=lambda x: -x["_delta"])[:2]
         f.append({
             "titel": "Grootste omslag: " + ", ".join(w["naam"].lower() for w in worst[:2]),
-            "tekst": ("Vergeleken met hun eigen trend vóór 2022 zakte de jaarlijkse groei het sterkst bij "
+            "tekst": (f"Vergeleken met hun eigen trend in {base}–{pre} zakte de jaarlijkse groei het sterkst bij "
                       + "; ".join(f"{w['naam'].lower()} ({_fmt(w['groei_voor'])}% → {_fmt(w['groei_na'])}%)" for w in worst)
                       + ". "
-                      + (f"Alle {len(found)} groepen groeien langzamer dan vóór {brk}; het minst vertraagd: "
+                      + (f"Alle {len(found)} groepen groeien langzamer dan in {base}–{pre}; het minst vertraagd: "
                          if all(x["_delta"] < 0 for x in found) else "Versneld: ")
                       + "; ".join(f"{b['naam'].lower()} ({_fmt(b['groei_voor'])}% → {_fmt(b['groei_na'])}%)" for b in best) + "."),
         })
@@ -358,7 +361,7 @@ def findings(a: dict) -> list[dict]:
         f.append({
             "titel": "De beroepen achter datarollen groeien nog",
             "tekst": ("Datarollen vallen grotendeels onder " + ", ".join(d["naam"].lower() for d in data) + ". "
-                      + " ".join(f"{d['naam']}: {_fmt(d['groei_voor'])}% per jaar vóór {brk}, {_fmt(d['groei_na'])}% erna."
+                      + " ".join(f"{d['naam']}: {_fmt(d['groei_voor'])}% per jaar in {base}–{pre}, {_fmt(d['groei_na'])}% sinds {brk}."
                                  for d in data)),
         })
         if all((d.get("groei_na") or 0) <= 0 for d in data):

@@ -381,7 +381,7 @@ function lineChart(c, o) {
   for (const mk of o.markers || []) {
     const xx = x(mk.at);
     S('line', { x1: xx, x2: xx, y1: m.t - 4, y2: m.t + ih, stroke: css('--ink-2'), 'stroke-width': 1, 'stroke-dasharray': '2 3' }, svg);
-    text(svg, xx + 5, m.t + 8, mk.label, 'anno');
+    text(svg, mk.above ? xx - 5 : xx + 5, m.t + 8, mk.label, 'anno', mk.above ? { 'text-anchor': 'end' } : {});
   }
   const ends = [];
   o.series.forEach(s => {
@@ -501,7 +501,7 @@ function aiHero() {
       <div class="big">${nf1.format(AI.aandeel)}<small>%</small></div>
       <p class="lede">van de werkenden zit in een beroep dat <b>sterk in aanmerking komt voor AI</b>: ${kf(AI.blootgesteld[i])} mensen.</p>
       <div class="stats">
-        <div class="stat"><div class="v" style="color:${(g.blootgesteld_na ?? 0) < (g.overig_na ?? 0) ? 'var(--ai)' : 'var(--ink)'}">${pctf(g.blootgesteld_na, true)}</div><div class="l">groei per jaar sinds ${AI.breukjaar}<br>overige beroepen: ${pctf(g.overig_na, true)}</div></div>
+        <div class="stat"><div class="v" style="color:${(g.blootgesteld_na ?? 0) < (g.overig_na ?? 0) ? 'var(--ai)' : 'var(--ink)'}">${pctf(g.blootgesteld_na, true)}</div><div class="l">groei per jaar sinds ${AI.breukjaar}, was ${pctf(g.blootgesteld_voor, true)}<br>overige beroepen: ${pctf(g.overig_na, true)}</div></div>
         <div class="stat"><div class="v">${pctf(jb)}</div><div class="l">jonger dan 25 jaar<br>overige beroepen: ${pctf((ja.overig || [])[i])}</div></div>
         <div class="stat"><div class="v">${pctf(q.blootgesteld, true)}</div><div class="l">laatste 4 kwartalen t.o.v. een jaar eerder${q.periode ? `<br>t/m ${esc(q.periode.split('–')[1].replace(/(\d{4})Q(\d)/, 'K$2 $1'))}` : ''}</div></div>
       </div>
@@ -552,27 +552,27 @@ function aiCharts() {
     ['ch-dumbbell', 'ch-index', 'ch-young', 'ch-quarter'].forEach(id => emptyBox(el(id), 'Wacht op CBS-cijfers.'));
     el('group-detail').innerHTML = ''; return;
   }
-  const brk = AI.breukjaar, base = AI.basisjaar, last = AI.laatste_jaar;
+  const brk = AI.breukjaar, base = AI.basisjaar, last = AI.laatste_jaar, pre = AI.voor_eind || brk;
   // halters
   const rows = AI.groepen.map(g => ({ key: g.naam, label: g.naam, a: g.groei_voor, b: g.groei_na, g, strong: g.data_relevant }))
     .sort((p, q) => ((p.b ?? 99) - (p.a ?? 0)) - ((q.b ?? 99) - (q.a ?? 0)));
-  el('db-note').textContent = `Gemiddelde groei van het aantal werkenden per jaar: ${base}–${brk} (open cirkel) en ${brk}–${last} (dichte cirkel). Gesorteerd van grootste vertraging naar grootste versnelling. Vetgedrukt: beroepen waar datarollen onder vallen. Klik op een beroep voor details.`;
-  legend('lg-db', [[`${base}–${brk}`, css('--ink-2'), 'ring'], ['Vertraagd', css('--ai'), 'dot'], ['Versneld', css('--nl'), 'dot']]);
+  el('db-note').textContent = `Gemiddelde groei van het aantal werkenden per jaar: ${base}–${pre} (open cirkel, vóór corona en vóór de vernieuwde enquête van ${AI.meetbreuk || 2021}) en ${brk}–${last} (dichte cirkel). Gesorteerd van grootste vertraging naar grootste versnelling. Vetgedrukt: beroepen waar datarollen onder vallen. Klik op een beroep voor details.`;
+  legend('lg-db', [[`${base}–${pre}`, css('--ink-2'), 'ring'], ['Vertraagd', css('--ai'), 'dot'], ['Versneld', css('--nl'), 'dot']]);
   dumbbell(el('ch-dumbbell'), rows, {
     fmt: v => (v > 0 ? '+' : '') + nf.format(v) + '%', selected: state.group, aColor: css('--ink-2'),
     cols: [{ label: 'werkenden', fmt: r => r.g.laatste != null ? nf.format(Math.round(r.g.laatste)) + 'k' : '–' }, { label: '<25 jr', fmt: r => r.g.aandeel_jong != null ? Math.round(r.g.aandeel_jong) + '%' : '–' }, { label: 'hbo/wo', fmt: r => r.g.aandeel_hoog != null ? Math.round(r.g.aandeel_hoog) + '%' : '–' }],
-    tip: r => `<b>${esc(r.label)}</b><div class="r"><span>Groei ${base}–${brk}</span><span>${pctf(r.a, true)} / jr</span></div><div class="r"><span>Groei ${brk}–${last}</span><span>${pctf(r.b, true)} / jr</span></div><div class="r"><span>Werkenden ${last}</span><span>${kf(r.g.laatste)}</span></div>`,
+    tip: r => `<b>${esc(r.label)}</b><div class="r"><span>Groei ${base}–${pre}</span><span>${pctf(r.a, true)} / jr</span></div><div class="r"><span>Groei ${brk}–${last}</span><span>${pctf(r.b, true)} / jr</span></div><div class="r"><span>Werkenden ${last}</span><span>${kf(r.g.laatste)}</span></div>`,
     onClick: r => selectGroup(r.key),
   });
   groupDetail();
   // index
   const bi = AI.jaren.indexOf(brk);
   const idx = s => s.map(v => v == null || !s[bi] ? null : +(v / s[bi] * 100).toFixed(1));
-  el('idx-note').textContent = `Aantal werkenden, ${brk} = 100.`;
+  el('idx-note').textContent = `Aantal werkenden, ${brk} = 100. In ${AI.meetbreuk || 2021} is de Enquête Beroepsbevolking aangepast aan nieuwe Europese regels; de sprong rond dat jaar kan deels een meetbreuk zijn.`;
   lineChart(el('ch-index'), { labels: AI.jaren, series: [
     { name: 'AI-gevoelig', values: idx(AI.blootgesteld), color: css('--ai'), width: 2.5 },
     { name: 'Overige beroepen', values: idx(AI.overig), color: css('--ink-3') }],
-    markers: [{ at: bi, label: 'ChatGPT, nov ' + brk }], ref: 100, yFmt: v => nf.format(v), directLabels: true, height: 270 });
+    markers: [...(AI.meetbreuk ? [{ at: AI.jaren.indexOf(AI.meetbreuk), label: 'nieuwe enquête', above: true }] : []), { at: bi, label: 'ChatGPT, nov ' + brk }], ref: 100, yFmt: v => nf.format(v), directLabels: true, height: 270 });
   legend('lg-idx', []);
   // jongeren
   const ja = AI.jong_aandeel || {};
@@ -580,7 +580,7 @@ function aiCharts() {
   else lineChart(el('ch-young'), { labels: AI.jaren, series: [
       { name: 'AI-gevoelig', values: ja.blootgesteld, color: css('--ai'), width: 2.5 },
       { name: 'Overige beroepen', values: ja.overig, color: css('--ink-3') }],
-    markers: [{ at: bi, label: 'ChatGPT' }], yFmt: v => nf.format(v) + '%', tipFmt: v => nf1.format(v) + '%', directLabels: true, height: 270 });
+    markers: [...(AI.meetbreuk ? [{ at: AI.jaren.indexOf(AI.meetbreuk), label: 'nieuwe enquête', above: true }] : []), { at: bi, label: 'ChatGPT' }], yFmt: v => nf.format(v) + '%', tipFmt: v => nf1.format(v) + '%', directLabels: true, height: 270 });
   // kwartalen: verandering 4-kw gemiddelde t.o.v. jaar eerder
   const K = AI.kwartaal || {};
   const roll = s => s.map((_, i) => i < 3 || s.slice(i - 3, i + 1).some(v => v == null) ? null : s.slice(i - 3, i + 1).reduce((a, b) => a + b, 0) / 4);
@@ -607,6 +607,7 @@ function groupDetail() {
       <div><span class="v">${pctf(g.aandeel_jong)}</span><span class="l">jonger dan 25 (${AI.breukjaar}: ${pctf(g.aandeel_jong_break)})</span></div>
       <div><span class="v">${pctf(g.aandeel_zelfstandig)}</span><span class="l">zelfstandig</span></div></div>
     <div><span class="label">Werkenden per kwartaal (x 1.000)</span><div class="chart" id="ch-gq" style="margin-top:6px"></div></div>
+    ${g.cbs_namen ? `<div><span class="label">CBS-beroepsgroep</span><ul class="tags" style="margin-top:8px">${g.cbs_namen.map(b => `<li>${esc(b)}</li>`).join('')}</ul></div>` : ''}
     <div><span class="label">Beroepen in deze groep (bron: appendix)</span><ul class="tags" style="margin-top:8px">${g.beroepen.map(b => `<li>${esc(b)}</li>`).join('')}</ul></div></div>`;
   const from = Math.max(0, qs.length - 20);
   if (s.some(v => v != null)) lineChart(el('ch-gq'), { labels: qs.slice(from), series: [{ name: g.naam, values: s.slice(from), color: g.data_relevant ? css('--nl') : css('--ai'), area: true }], xFmt: fmtQ, height: 150, yTicks: 3, xSpace: 70 });
@@ -759,7 +760,8 @@ function sources() {
     rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('') + '</tbody>';
   el('method-ai').innerHTML = `<h3>Methode: AI-blootstelling</h3>
     <p>De 12 beroepsgroepen komen uit de appendix van Groenewegen et al. Voor elke groep telt de monitor het aantal werkenden volgens de CBS Enquête Beroepsbevolking (BRC 2014, editie 2025).</p>
-    <ul><li>"Vóór" en "na" vergelijkt de gemiddelde jaarlijkse groei over ${AI.basisjaar || 2015}–${AI.breukjaar || 2022} met ${AI.breukjaar || 2022}–${AI.laatste_jaar || 'nu'}. ChatGPT verscheen in november ${AI.breukjaar || 2022}.</li>
+    <ul><li>"Vóór" en "na" vergelijkt de gemiddelde jaarlijkse groei over ${AI.basisjaar || 2015}–${AI.voor_eind || 2019} met ${AI.breukjaar || 2022}–${AI.laatste_jaar || 'nu'}. ChatGPT verscheen in november ${AI.breukjaar || 2022}. De vóór-periode stopt bewust in ${AI.voor_eind || 2019}: daarna volgen corona en in ${AI.meetbreuk || 2021} een vernieuwde enquête (nieuwe Europese IESS-regels), wat een trendbreuk kan geven.</li>
+    <li>De nieuwe CBS-editie (BRC 2014, editie 2025) heeft enkele groepen hernoemd of gesplitst. Software- en applicatieontwikkelaars omvat hier ook systeemanalisten en ICT-adviseurs; de vertaling staat in de configuratie (AI_GROUP_CBS).</li>
     <li>De cijfers tonen samenhang in de tijd, geen oorzaak. Conjunctuur, vergrijzing en beleid spelen ook mee.</li>
     <li>De Enquête Beroepsbevolking is een steekproef. Kleine groepen (zoals bibliothecarissen) schommelen sterk; kijk daar naar de trend over meerdere jaren.</li>
     <li>De Europese vergelijking gebruikt ISCO-hoofdgroepen; die zijn breder dan de lijst.</li></ul>`;

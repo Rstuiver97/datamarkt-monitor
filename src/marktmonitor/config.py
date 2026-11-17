@@ -301,7 +301,12 @@ AI_GROUPS_DATA = ["Databank- en netwerkspecialisten", "Software- en applicatieon
                   "Financieel specialisten en economen"]
 # Moment vanaf wanneer generatieve AI breed beschikbaar was (ChatGPT, nov 2022).
 AI_BREAK_YEAR = 2022
+# Referentieperiode "vóór": 2015-2019. Bewust vóór corona en vóór 2021, toen de
+# Enquête Beroepsbevolking werd aangepast aan de nieuwe Europese IESS-regels
+# (mogelijke trendbreuk). "Na" is AI_BREAK_YEAR tot het laatste jaar.
 AI_BASE_YEAR = 2015
+AI_PRE_END = 2019
+AI_SERIES_BREAK = 2021
 
 # CBS-tabellen, in volgorde van voorkeur (nieuwste eerst).
 CBS_BEROEP_TABLES = ["86320NED", "85276NED"]
