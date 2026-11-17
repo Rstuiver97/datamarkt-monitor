@@ -1,0 +1,2055 @@
+{
+ "table": "86320NED",
+ "info": {
+  "ID": 0,
+  "Title": "Werkzame beroepsbevolking; beroep",
+  "ShortTitle": "Werkzame beroepsbevolking; beroep",
+  "Identifier": "86320NED",
+  "Summary": "Werkzame beroepsbevolking\nBeroep, persoonskenmerken, kenmerken werkkring",
+  "Modified": "2026-10-30T06:30:00",
+  "ReasonDelivery": "Actualisering",
+  "ExplanatoryText": "",
+  "Language": "nl",
+  "Catalog": "CBS",
+  "Frequency": "Perkwartaal",
+  "Period": "2013 - 2026",
+  "ShortDescription": "Deze tabel bevat kwartaal- en jaarcijfers over de beroepen waarbinnen de werkzame beroepsbevolking werkzaam is. De bevolking van 15 tot 75 jaar (exclusief de institutionele bevolking) met betaald werk wordt hiervoor ingedeeld op basis van het beroep (BRC 2014 editie 2025). Voor de verschillende indelingen is een uitsplitsing naar geslacht, leeftijd, onderwijsniveau, positie in de werkkring en arbeidsduur beschikbaar.\n\nGegevens beschikbaar vanaf: 2013\n\nStatus van de cijfers:\nDe cijfers in deze tabel zijn definitief.  \n\nWijzigingen per 30 oktober 2026:\nDe cijfers over het 3e kwartaal 2026 zijn toegevoegd.\n\nWanneer komen er nieuwe cijfers?\nNieuwe cijfers worden gepubliceerd in januari 2027.\n",
+  "Description": "INHOUDSOPGAVE\r\n\r\n1. Toelichting\r\n2. Definities en verklaring van symbolen\r\n3. Koppelingen naar relevante tabellen en artikelen\r\n4. Bronnen en methoden\r\n5. Meer informatie \r\n\r\n1. TOELICHTING\r\nDeze tabel bevat kwartaal- en jaarcijfers over de beroepen waarbinnen de werkzame beroepsbevolking werkzaam is. De bevolking van 15 tot 75 jaar (exclusief de institutionele bevolking) met betaald werk wordt hiervoor ingedeeld op basis van het beroep (BRC 2014 editie 2025). Voor de verschillende indelingen is een uitsplitsing naar geslacht, leeftijd, onderwijsniveau, positie in de werkkring en arbeidsduur beschikbaar.\r\n\r\nGegevens beschikbaar vanaf: 2013\r\n\r\nStatus van de cijfers:\r\nDe cijfers in deze tabel zijn definitief.  \r\n\r\nWijzigingen per 30 oktober 2026:\r\nDe cijfers over het 3e kwartaal 2026 zijn toegevoegd.\r\n\r\nWanneer komen er nieuwe cijfers?\r\nNieuwe cijfers worden gepubliceerd in januari 2027.\r\n\r\n2. DEFINITIES EN VERKLARING VAN SYMBOLEN\r\n\r\nDefinities:\r\nWerkzame beroepsbevolking:\r\nPersonen die betaald werk hebben.\r\n\r\nBeroepenindeling ROA CBS 2014 (BRC 2014 editie 2025):\r\nDe Beroepenindeling ROA CBS 2014 is een van de International Standard Classification of Occupations 2008 (ISCO 2008) afgeleide indeling van beroepen bedoeld voor toepassing in analyses en statistieken op nationaal niveau. De BRC 2014 is afgeleid van de 3 en 4 digits beroepencodes uit de ISCO 2008. Aanleiding voor deze indeling was het gegeven dat vanaf 2013 door het CBS het beroep van respondenten in de Enquête Beroepsbevolking (EBB) na het herontwerp van de persoonsenquêtes niet meer wordt ingedeeld volgens de Standaard Beroepenclassificatie 1992 (SBC 1992) maar alleen nog volgens de ISCO 2008. Met het herontwerp van de persoonsenquêtes zijn ook wijzigingen doorgevoerd in de manier waarop de gegevens van de EBB worden verzameld en verwerkt. De BRC 2014 is in een aantal opzichten een verbetering ten opzichte van de ISCO 2008 voor toepassing op nationaal niveau. Ten eerste zijn de groeperingen van de BRC 2014 op een zodanige wijze samengesteld dat bij gebruik in een steekproefonderzoek als de EBB de omvang ervan voldoende groot is voor publicatie door het CBS op Statline en/of om betrouwbare arbeidsmarktanalyses te kunnen uitvoeren door het ROA en andere gebruikers van de EBB. Ten tweede is in de BRC 2014 de herkenbaarheid van de groeperingen verbeterd door aanpassingen in de naamgeving van de beroepen.\r\n\r\nVerklaring van symbolen:\r\n\r\nniets (blanco)\t: het cijfer kan op logische gronden niet voorkomen\r\n. \t\t: het cijfer is onbekend, onvoldoende betrouwbaar of geheim\r\n*\t\t: voorlopige cijfers\r\n**\t\t: nader voorlopige cijfers\r\n\r\nDe cijfers zijn afgerond op duizendtallen. Hierdoor kan het voorkomen, dat de som van de detailgegevens afwijkt van het totaal.\r\n\r\n3. KOPPELINGEN NAAR RELEVANTE TABELLEN EN ARTIKELEN\r\n\r\nDeze tabel is de opvolger van: <a href='https://opendata.cbs.nl/#/CBS/nl/dataset/85276NED'>Werkzame beroepsbevolking; beroep 2013-2025</a>\r\nDe oude tabel bevat cijfers volgens de BRC 2014. De BRC 2014 editie 2025 is een vernieuwde versie van de BRC 2014 waarin verschillende termen zijn gemoderniseerd en daarnaast enkele structurele wijzigingen op het niveau van beroepsgroepen zijn gedaan. Op <a href='https://www.cbs.nl/nl-nl/onze-diensten/methoden/classificaties/onderwijs-en-beroepen/beroepenclassificatie--isco-en-sbc--'>de website van het CBS</a> staat meer uitleg over de BRC 2014 en de nieuwe editie 2025.\r\n\r\nRelevante tabellen:\r\nAndere tabellen over de arbeidsdeelname zijn te vinden op StatLine onder het thema <a href='https://opendata.cbs.nl/statline/#/CBS/nl/navigatieScherm/thema?themaNr=50870'>Beroepsbevolking</a>.\r\n\r\nDeze tabel bevat cijfers die vanaf 2013 zijn herberekend om zoveel mogelijk aan te sluiten op de uitkomsten vanaf 2021. De cijfers in de tabel <a href='http://opendata.cbs.nl/statline/#/CBS/nl/dataset/80590ned/table?dl=61121'>Arbeidsdeelname en werkloosheid per maand</a> zijn vanaf 2003 herberekend.\r\nRelevante artikelen:\r\n\r\nVoor meer informatie over de revisie van de cijfers over werkloosheid en de beroepsbevolking, zie het <a href='https://www.cbs.nl/nl-nl/nieuws/2021/48/meer-werklozen-maar-ook-meer-werkenden-met-nieuwe-meetmethode'>artikel van 3 december 2021</a>.\r\n\r\nMeer informatie is te vinden op de themapagina <a href='https://www.cbs.nl/nl-NL/menu/themas/arbeid-sociale-zekerheid/nieuws/default.htm'>Arbeid en Sociale Zekerheid</a>.\r\n\r\n4. BRONNEN EN METHODEN\r\n\r\nDeze tabel is samengesteld op basis van de Enquête Beroepsbevolking (EBB). Vanwege wijzigingen in het onderzoeksdesign en de vragenlijst van de EBB zijn de cijfers over 2021 niet zonder meer vergelijkbaar met de cijfers tot en met 2020. De kerncijfers in deze tabel zijn daarom consistent gemaakt met de (niet-seizoengecorrigeerde) cijfers in de tabel <a href='http://opendata.cbs.nl/statline/#/CBS/nl/dataset/85224NED/table?dl=6A716'>Arbeidsdeelname, kerncijfers seizoengecorrigeerd</a>, waarin de uitkomsten voor de periode 2013-2020 zijn herberekend om aan te sluiten op de uitkomsten vanaf 2021. Bij verdere detaillering van de uitkomsten naar baan- en persoonskenmerken kunnen er van 2020 op 2021 desondanks verschillen zijn als gevolg van de nieuwe methode.\r\n\r\nDe onderzoeksmethode van deze tabel is te vinden in de onderzoeksbeschrijving van de <a href='https://www.cbs.nl/nl-NL/menu/themas/arbeid-sociale-zekerheid/methoden/dataverzameling/korte-onderzoeksbeschrijvingen/onderzoeksbeschrijving-ebb-art.htm'>Enquête beroepsbevolking (EBB)</a>.\r\n\r\nVanaf 2021 wordt voor het onderwijsniveau gepubliceerd op basis van de SOI 2021. De ISCED-F 2013 is als basis genomen voor de richtingindeling van de SOI 2021. Meer informatie over de SOI 2021 is te vinden op de pagina <a href='https://www.cbs.nl/nl-nl/onze-diensten/methoden/classificaties/onderwijs-en-beroepen/standaard-onderwijsindeling--soi--/standaard-onderwijsindeling-2021'>Standaard Onderwijsindeling 2021</a>\r\n\r\n5. MEER INFORMATIE\r\n\r\n<a href='https://www.cbs.nl/nl-nl/over-ons/contact/infoservice'>Infoservice</a>\r\n\r\nCopyright (c) Centraal Bureau voor de Statistiek, Den Haag/Heerlen \r\nVerveelvoudiging is toegestaan, mits het CBS als bron wordt vermeld.",
+  "DefaultPresentation": "ts=1792486621336&graphtype=Table&r=Beroep&k=Perioden&t=Geslacht,Persoonskenmerken,Topics",
+  "DefaultSelection": "$filter=((Geslacht eq 'T001038')) and ((Persoonskenmerken eq 'T009002')) and ((Beroep eq 'T001014') or (Beroep eq 'A000161') or (Beroep eq 'A000172') or (Beroep eq 'A000182') or (Beroep eq 'A000192') or (Beroep eq 'A000209') or (Beroep eq 'A000228') or (Beroep eq 'A000239') or (Beroep eq 'A000273') or (Beroep eq 'A000280') or (Beroep eq 'A000287') or (Beroep eq 'A000305') or (Beroep eq 'A000316') or (Beroep eq 'A000326')) and ((Perioden eq '2025KW01') or (Perioden eq '2025KW02') or (Perioden eq '2025KW03') or (Perioden eq '2025KW04') or (Perioden eq '2026KW01') or (Perioden eq '2026KW02') or (Perioden eq '2026KW03'))&$select=Geslacht, Persoonskenmerken, Beroep, Perioden, WerkzameBeroepsbevolking_1",
+  "GraphTypes": "Table,Bar,Line",
+  "OutputStatus": "Regulier",
+  "Source": "CBS.",
+  "MetaDataModified": "2026-10-30T06:30:00",
+  "SearchPriority": "2"
+ },
+ "properties": [
+  {
+   "odata.type": "Cbs.OData.Dimension",
+   "ID": 0,
+   "Position": 0,
+   "ParentID": null,
+   "Type": "Dimension",
+   "Key": "Geslacht",
+   "Title": "Geslacht",
+   "Description": ""
+  },
+  {
+   "odata.type": "Cbs.OData.Dimension",
+   "ID": 1,
+   "Position": 1,
+   "ParentID": null,
+   "Type": "Dimension",
+   "Key": "Persoonskenmerken",
+   "Title": "Persoonskenmerken",
+   "Description": ""
+  },
+  {
+   "odata.type": "Cbs.OData.Dimension",
+   "ID": 2,
+   "Position": 2,
+   "ParentID": null,
+   "Type": "Dimension",
+   "Key": "Beroep",
+   "Title": "Beroep",
+   "Description": ""
+  },
+  {
+   "odata.type": "Cbs.OData.TimeDimension",
+   "ID": 3,
+   "Position": 3,
+   "ParentID": null,
+   "Type": "TimeDimension",
+   "Key": "Perioden",
+   "Title": "Perioden",
+   "Description": "",
+   "ReleasePolicy": false
+  },
+  {
+   "odata.type": "Cbs.OData.Topic",
+   "ID": 4,
+   "Position": 4,
+   "ParentID": null,
+   "Type": "Topic",
+   "Key": "WerkzameBeroepsbevolking_1",
+   "Title": "Werkzame beroepsbevolking",
+   "Description": "Personen die betaald werk hebben.\r\n\r\nDeze definitie heeft betrekking op personen die in Nederland wonen (exclusief de institutionele bevolking). De gegevens worden meestal gepresenteerd voor de bevolking van 15 tot 75 jaar. Bij betaald werk gaat het om werkzaamheden ongeacht de arbeidsduur.",
+   "Datatype": "Integer",
+   "Unit": "x 1 000",
+   "Decimals": 0,
+   "Default": "Impossible"
+  }
+ ],
+ "dimensions": {
+  "Geslacht": [
+   {
+    "Key": "T001038",
+    "Title": "Totaal mannen en vrouwen",
+    "Description": "",
+    "CategoryGroupID": null
+   },
+   {
+    "Key": "3000   ",
+    "Title": "Mannen",
+    "Description": "",
+    "CategoryGroupID": null
+   },
+   {
+    "Key": "4000   ",
+    "Title": "Vrouwen",
+    "Description": "",
+    "CategoryGroupID": null
+   }
+  ],
+  "Persoonskenmerken": [
+   {
+    "Key": "T009002",
+    "Title": "Totaal personen",
+    "Description": "",
+    "CategoryGroupID": 1
+   },
+   {
+    "Key": "2021210",
+    "Title": "Arbeidsduur: minder dan 12 uur per week",
+    "Description": "Het aantal uren dat een persoon in een normale of gemiddelde werkweek werkt, is minder dan 12 uur.",
+    "CategoryGroupID": 4
+   },
+   {
+    "Key": "2021211",
+    "Title": "Arbeidsduur: minder dan 20 uur per week",
+    "Description": "Het aantal uren dat een persoon in een normale of gemiddelde werkweek werkt, is minder dan 20 uur.",
+    "CategoryGroupID": 4
+   },
+   {
+    "Key": "2021209",
+    "Title": "Arbeidsduur: deeltijd",
+    "Description": "Het aantal uren dat een persoon in een normale of gemiddelde werkweek werkt, is minder dan 35 uur.",
+    "CategoryGroupID": 4
+   },
+   {
+    "Key": "2021220",
+    "Title": "Arbeidsduur: 12 tot 20 uur per week",
+    "Description": "Het aantal uren dat een persoon in een normale of gemiddelde werkweek werkt, is 12 tot 20 uur.",
+    "CategoryGroupID": 4
+   },
+   {
+    "Key": "2021230",
+    "Title": "Arbeidsduur: 20 tot 35 uur per week",
+    "Description": "Het aantal uren dat een persoon in een normale of gemiddelde werkweek werkt, is 20 tot 35 uur.",
+    "CategoryGroupID": 4
+   },
+   {
+    "Key": "2021240",
+    "Title": "Arbeidsduur: voltijd",
+    "Description": "Het aantal uren dat een persoon in een normale of gemiddelde werkweek werkt, is 35 uur of meer.",
+    "CategoryGroupID": 4
+   },
+   {
+    "Key": "53050  ",
+    "Title": "Leeftijd: 15 tot 25 jaar",
+    "Description": "",
+    "CategoryGroupID": 2
+   },
+   {
+    "Key": "53310  ",
+    "Title": "Leeftijd: 25 tot 45 jaar",
+    "Description": "",
+    "CategoryGroupID": 2
+   },
+   {
+    "Key": "53500  ",
+    "Title": "Leeftijd: 25 tot 35 jaar",
+    "Description": "",
+    "CategoryGroupID": 2
+   },
+   {
+    "Key": "53700  ",
+    "Title": "Leeftijd: 35 tot 45 jaar",
+    "Description": "",
+    "CategoryGroupID": 2
+   },
+   {
+    "Key": "53800  ",
+    "Title": "Leeftijd: 45 tot 55 jaar",
+    "Description": "",
+    "CategoryGroupID": 2
+   },
+   {
+    "Key": "53825  ",
+    "Title": "Leeftijd: 45 tot 75 jaar",
+    "Description": "",
+    "CategoryGroupID": 2
+   },
+   {
+    "Key": "53900  ",
+    "Title": "Leeftijd: 55 tot 65 jaar",
+    "Description": "",
+    "CategoryGroupID": 2
+   },
+   {
+    "Key": "53925  ",
+    "Title": "Leeftijd: 65 tot 75 jaar",
+    "Description": "",
+    "CategoryGroupID": 2
+   },
+   {
+    "Key": "2018700",
+    "Title": "1 Basisonderwijs, vmbo, mbo1",
+    "Description": "Het behaalde onderwijsniveau omvat het basisonderwijs, het vmbo, de eerste 3 leerjaren van havo/vwo, de entreeopleiding (mbo1) en het praktijkonderwijs.",
+    "CategoryGroupID": 3
+   },
+   {
+    "Key": "2018740",
+    "Title": "2 Havo, vwo, mbo2-4",
+    "Description": "Het behaalde onderwijsniveau omvat de bovenbouw van havo/vwo, de basisberoepsopleiding (mbo2), de vakopleiding (mbo3) en de middenkader- en specialistenopleidingen (mbo4).",
+    "CategoryGroupID": 3
+   },
+   {
+    "Key": "2018790",
+    "Title": "3 Hbo, wo",
+    "Description": "Het behaalde onderwijsniveau omvat de hbo- en wo-opleidingen (inclusief die leidend tot de doctorsgraad).",
+    "CategoryGroupID": 3
+   },
+   {
+    "Key": "2018820",
+    "Title": "Onderwijsniveau: weet niet of onbekend",
+    "Description": "Het hoogst behaald onderwijsniveau is onbekend.",
+    "CategoryGroupID": 3
+   },
+   {
+    "Key": "2021320",
+    "Title": "Werkkring: werknemer",
+    "Description": "Een persoon die in een arbeidsovereenkomst afspraken met een economische eenheid maakt om arbeid te verrichten waartegenover een financiële beloning staat.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021330",
+    "Title": "Werkkring: vaste arbeidsrelatie",
+    "Description": "Een werknemer met een arbeidsovereenkomst voor onbepaalde tijd én een vast aantal uren per week.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021340",
+    "Title": "Werkkring: flexibele arbeidsrelatie",
+    "Description": "Een werknemer met een arbeidsovereenkomst voor bepaalde tijd óf een flexibel aantal uren per week. Tot de werknemers met een flexibele arbeidsrelatie behoren: - Werknemer tijdelijk, uitzicht op vast - Werknemer tijdelijk >=1 jaar - Werknemer tijdelijk <1 jaar - Oproep/-invalkracht - Uitzendkracht - Werknemer flex, contract onbekend.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021342",
+    "Title": "Werkkring: tijdelijk, uitzicht op vast",
+    "Description": "Een werknemer met een arbeidsovereenkomst voor bepaalde tijd én een vast aantal uren per week waarbij is afgesproken dat hij/zij bij goed functioneren in vaste dienst komt.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021344",
+    "Title": "Werkkring: tijdelijk >= 1 jaar",
+    "Description": "Een werknemer met een arbeidsovereenkomst van ten minste een jaar én een vast aantal uren per week.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021346",
+    "Title": "Werkkring: tijdelijk < 1 jaar",
+    "Description": "Een werknemer met een arbeidsovereenkomst van minder dan een jaar én een vast aantal uren per week.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021350",
+    "Title": "Werkkring: oproep-/invalkracht",
+    "Description": "Een werknemer die op afroep beschikbaar is voor het verrichten van werkzaamheden.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021360",
+    "Title": "Werkkring: uitzendkracht",
+    "Description": "Een persoon die ingeschreven is bij een uitzendbureau en die met dat bureau een arbeidsverhouding is aangegaan tot het verrichten van werkzaamheden op tijdelijke basis voor derden.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "A050414",
+    "Title": "Werkkring: flex, onbekend contract",
+    "Description": "Een werknemer met een flexibele arbeidsrelatie waarvan de vorm van het flexibele contract onbekend is.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021380",
+    "Title": "Werkkring: zelfstandige",
+    "Description": "Een persoon die voor eigen rekening of risico arbeid verricht \r\n- in een eigen bedrijf of praktijk (zelfstandig ondernemer),  \r\n- als directeur-grootaandeelhouder (dga),\r\n- in het bedrijf of de praktijk van een gezinslid (meewerkend gezinslid), of \r\n- als overige zelfstandige.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021397",
+    "Title": "Werkkring: zzp-eigen arbeid",
+    "Description": "Een persoon die voor eigen rekening of risico arbeid verricht in een eigen bedrijf of praktijk (zelfstandig ondernemer) of als directeur-grootaandeelhouder (dga), geen personeel in dienst heeft en vooral eigen arbeid of diensten aanbiedt. Overige zelfstandigen worden ook tot de zzp-eigen arbeid gerekend.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021398",
+    "Title": "Werkkring: zzp-producten",
+    "Description": "Een persoon die voor eigen rekening of risico arbeid verricht in een eigen bedrijf of praktijk (zelfstandig ondernemer) of als directeur-grootaandeelhouder (dga), geen personeel in dienst heeft en vooral producten verkoopt of grondstoffen aanbiedt.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021400",
+    "Title": "Werkkring: meewerkend gezinslid",
+    "Description": "Een persoon die zonder schriftelijke  overeenkomst arbeid verricht in het bedrijf of de praktijk van een gezinslid.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021420",
+    "Title": "Werkkring: zelfstandige met personeel",
+    "Description": "Een persoon die voor eigen rekening of risico arbeid verricht in een eigen bedrijf of praktijk (zelfstandig ondernemer) of als directeur-grootaandeelhouder (dga) en die personeel in dienst heeft.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   },
+   {
+    "Key": "2021430",
+    "Title": "Werkkring: zelfst. zonder personeel(zzp)",
+    "Description": "Een persoon die voor eigen rekening of risico arbeid verricht in een eigen bedrijf of praktijk (zelfstandig ondernemer) of als directeur-grootaandeelhouder (dga) en die geen personeel in dienst heeft. Overige zelfstandigen worden ook tot de zelfstandigen zonder personeel gerekend.\r\n\r\nAls een persoon meer dan één baan of werkkring heeft, dan wordt uitgegaan van de baan of werkkring waaraan de meeste tijd wordt besteed.",
+    "CategoryGroupID": 5
+   }
+  ],
+  "Beroep": [
+   {
+    "Key": "T001014",
+    "Title": "Totaal",
+    "Description": "",
+    "CategoryGroupID": 7
+   },
+   {
+    "Key": "A000335",
+    "Title": "Beroepsniveau 1 (ISCO 2008)",
+    "Description": "Eenvoudige routinematige taken; vereist basisonderwijs of een diploma op vmbo- of mbo1-niveau. Onder beroepsniveau 1 vallen beroepen met eenvoudig en routinematig lichamelijk en handmatig werk met gebruik van handgereedschap zoals een spade, of eenvoudige elektrische apparaten als een stofzuiger. Taken zijn bijv. schoonmaken, graven, met de hand tillen en verplaatsen van materiaal, sorteren, opslaan of met de hand in elkaar zetten van goederen (soms met behulp van machines): bedienen van niet-gemotoriseerde voertuigen, en fruit plukken en groente oogsten. Veel beroepen op dit niveau vereisen lichamelijke inspanning en/of uithoudingsvermogen. Voor sommige beroepen is basisvaardigheid in lezen en schrijven vereist. Die vaardigheid vormt dan niet het belangrijkste onderdeel van de baan. Voor sommige beroepen op beroepsniveau 1 is het noodzakelijk het basisonderwijs (ISCED Level 1) te hebben doorlopen. Voor sommige beroepen kan een korte stage nodig zijn. Uitgedrukt in termen van het Nederlandse onderwijssysteem zijn in skill level 1 beroepen met voornamelijk basisonderwijs, en vmbo- of mbo1-niveau samengenomen. Voorbeelden van beroepen op beroepsniveau 1 zijn schoonmaker van kantoren, glazenwasser, lader en losser, vuilnisman, bollenpeller, opperman, frietbakker en keukenhulp.",
+    "CategoryGroupID": 7
+   },
+   {
+    "Key": "A000336",
+    "Title": "Beroepsniveau 2 (ISCO 2008)",
+    "Description": "Weinig tot middelmatig complexe taken; vereist basisonderwijs of een diploma op vmbo-, havo-, vwo- of mbo-niveau. Onder beroepsniveau 2 vallen beroepen met taken als het bedienen van machines en elektronische apparaten, voertuigen besturen, onderhouden en repareren van elektrische en mechanische apparaten en het bewerken, ordenen en opslaan van gegevens. Voor vrijwel alle beroepen op dit niveau is het noodzakelijk informatie te kunnen lezen zoals veiligheidsvoorschriften, afgehandeld werk te kunnen beschrijven en nauwkeurig eenvoudige berekeningen te kunnen uitvoeren. Voor veel beroepen op beroepsniveau 2 zijn een gevorderde taal- en rekenvaardigheid en goede communicatieve vaardigheden vereist. Bij sommige beroepen vormen deze vaardigheden het belangrijkste onderdeel van het werk. Veel beroepen op dit niveau vereisen een goede handvaardigheid. De benodigde kennis en vaardigheden om beroepen op niveau 2 te kunnen uitoefenen worden in het algemeen verkregen na het doorlopen van de eerste fase van het voortgezet onderwijs (ISCED Level 2). Voor sommige beroepen moet de tweede fase van het voortgezet onderwijs zijn doorlopen (ISCED Leve 3), waarbij gespecialiseerd beroepsonderwijs en on-the-job training vaak een belangrijk aspect vormen. Voor sommige beroepen is een specifieke beroepsopleiding na afronding van het voortgezet onderwijs noodzakelijk (ISCED Level 4). In sommige gevallen kan met ervaring en on-the-job training worden volstaan. Uitgedrukt in termen van het Nederlandse onderwijssysteem zijn in skill level 2 beroepen met voornamelijk basisonderwijs- en vmbo-niveau en deels havo-, vwo- en mbo-niveau samengenomen. Voorbeelden van beroepen op beroepsniveau 2 zijn slager, buschauffeur, secretaresse, boekhoudkundig medewerker, naaister, coupeuse, verkoper, politieagent, kapper, elektrisch installateur en automonteur.",
+    "CategoryGroupID": 7
+   },
+   {
+    "Key": "A000337",
+    "Title": "Beroepsniveau 3 (ISCO 2008)",
+    "Description": "Complexe taken; vereist een diploma op voornamelijk havo-, vwo- of mbo-niveau en deels hbo- of wo-niveau. Onder beroepsniveau 3 vallen beroepen met taken als het uitvoeren van complexe technische en praktische taken die een uitgebreide feitenkennis, technische kennis en kennis van procedures op een specifiek gebied vereisen. Voor beroepen op dit beroepsniveau zijn in het algemeen een uitstekende taal- en rekenvaardigheid en goed ontwikkelde communicatieve vaardigheden noodzakelijk. Tot deze vaardigheden behoren het kunnen begrijpen van complexe schriftelijke informatie, voorbereiden van feitenverslagen, en omgaan met mensen met problemen. De op beroepsniveau 3 benodigde kennis en vaardigheden worden gewoonlijk verkregen door voltooiing van een studie van 1-3 jaar in het hoger onderwijs (ISCED Level 5b) na het voortgezet onderwijs. In sommige gevallen kan met uitgebreide relevante werkervaring en langdurige on-the-job training worden volstaan. Uitgedrukt in termen van het Nederlandse onderwijssysteem zijn in skill level 3 beroepen met voornamelijk havo-, vwo- en mbo-niveau en deels hbo- en wo-niveau samengenomen. Voorbeelden van beroepen op beroepsniveau 3 zijn uitvoerder, bouwkundig opzichter, medisch laboratoriumpersoneel, juridisch secretaresse, vertegenwoordiger, technisch personeel in de IT-ondersteuning en radio- en opnametechnici.",
+    "CategoryGroupID": 7
+   },
+   {
+    "Key": "A000338",
+    "Title": "Beroepsniveau 4 (ISCO 2008)",
+    "Description": "Zeer complexe gespecialiseerde taken; hbo- of wo-niveau vereist. Onder beroepsniveau 4 vallen beroepen met taken als het uitvoeren het oplossen van ingewikkelde problemen en nemen van beslissingen die zijn gebaseerd op een uitgebreide theoretische en praktische kennis op een gespecialiseerd gebied. Tot de taken behoren onderzoek om kennis op een speciaal gebied te vergroten, diagnose en behandeling van ziekte, kennis delen met anderen en het ontwerpen van constructies, machines, bouwprojecten en productieprocessen. Beroepen op dit niveau vereisen in het algemeen een uitgebreide taal -en rekenvaardigheid, soms op zeer hoog niveau, en uitstekende communicatieve vaardigheden. Tot deze vaardigheden behoren meestal het kunnen begrijpen van complexe schriftelijke informatie en het kunnen overbrengen van complexe ideeën in media als boeken, verslagen en mondelinge presentaties. D e voor beroepsniveau 4 vereiste kennis en vaardigheden worden gewoonlijk verkregen door een studie van 3-6 jaar in het hoger onderwijs (ISCED Level 5a of hoger). In sommige gevallen kan in plaats daarvan worden volstaan met ervaring en on-the-job training . In veel gevallen zijn voor het beroep specifieke diploma's vereist. Uitgedrukt in termen van het Nederlandse onderwijssysteem zijn in skill level 4 beroepen met hbo- of wo-niveau samengenomen. Voorbeelden van beroepen op beroepsniveau 4 zijn sales- en marketing manager, ingenieur weg- en waterbouw, leraar voortgezet onderwijs, arts, gespecialiseerd verpleegkundige, musici en systeemanalist.",
+    "CategoryGroupID": 7
+   },
+   {
+    "Key": "A000339",
+    "Title": "Beroepsniveau onbekend (ISCO 2008)",
+    "Description": "",
+    "CategoryGroupID": 7
+   },
+   {
+    "Key": "A000161",
+    "Title": "01 Pedagogische beroepen",
+    "Description": "Pedagogische beroepen: Deze beroepsklasse omvat de docenten, sportinstructeurs, leidsters kinderopvang en onderwijsassistenten",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000162",
+    "Title": "011 Docenten",
+    "Description": "Docenten: Dit beroepssegment omvat de leerkrachten basisonderwijs, docenten algemene vakken en docenten beroepsgerichte vakken secundair onderwijs, docenten hoger onderwijs en hoogleraren en onderwijskundigen en overige docenten",
+    "CategoryGroupID": 12
+   },
+   {
+    "Key": "A000163",
+    "Title": "0111 Docenten hoger onderwijs en hoog...",
+    "Description": "Docenten hoger onderwijs en hoogleraren: Deze beroepsgroep omvat de professoren, universitair (hoofd)docenten, student-assistenten en leraren aan het hbo",
+    "CategoryGroupID": 27
+   },
+   {
+    "Key": "A000164",
+    "Title": "0112 Docenten beroepsgerichte vakken ...",
+    "Description": "Docenten beroepsgerichte vakken secundair onderwijs: Deze beroepsgroep omvat de docenten techniek, agrarische vakken, sociale en persoonlijke verzorging, veiligheid en instructeurs en praktijkopleiders",
+    "CategoryGroupID": 27
+   },
+   {
+    "Key": "A000165",
+    "Title": "0113 Docenten algemene vakken secunda...",
+    "Description": "Docenten algemene vakken secundair onderwijs: Deze beroepsgroep omvat de docenten aardrijkskunde, geschiedenis, economische vakken, talen, biologie, natuur- en scheikunde, wiskunde en informatica, techniek, beroepenoriëntatie, kunst- en creatieve vakken en godsdienst",
+    "CategoryGroupID": 27
+   },
+   {
+    "Key": "A000166",
+    "Title": "0114 Leerkrachten basisonderwijs",
+    "Description": "Leerkrachten basisonderwijs: Deze beroepsgroep omvat de kleuterleidsters, leerkrachten basisonderwijs, leerkrachten speciaal en voortgezet speciaal onderwijs, leraren praktijkonderwijs en leerwegondersteunend onderwijs, remedial teachers",
+    "CategoryGroupID": 27
+   },
+   {
+    "Key": "A000167",
+    "Title": "0115 Onderwijsbegeleiders, onderwijsk...",
+    "Description": "Onderwijsbegeleiders, onderwijskundigen en overige docenten: Deze beroepsgroep omvat de onderwijsconsulenten, onderwijskundigen, opleidingsadviseurs, docenten Nederlands als tweede taal, particulier docenten muziek, beeldende kunst, trainers informatica, onderwijscoördinatoren, studentendecanen en -begeleiders.",
+    "CategoryGroupID": 27
+   },
+   {
+    "Key": "A000168",
+    "Title": "012 Sportinstructeurs",
+    "Description": "Sportinstructeurs: Dit beroepssegment omvat de sportbeoefenaren, -trainers en fitnessinstructeurs",
+    "CategoryGroupID": 12
+   },
+   {
+    "Key": "A000169",
+    "Title": "0121 Beroepsgroep sportinstructeurs",
+    "Description": "Sportinstructeurs: Deze beroepsgroep omvat de atleten en andere sportbeoefenaren, sporttrainers en zweminstructeurs, fitnessinstructeurs en leiders van recreatieprogramma's",
+    "CategoryGroupID": 27
+   },
+   {
+    "Key": "A000170",
+    "Title": "013 (Pedagogisch) medewerkers kindero...",
+    "Description": "(Pedagogisch) medewerkers kinderopvang en onderwijsassistenten: Dit beroepssegment omvat de kinderverzorgers en onderwijsassistenten.",
+    "CategoryGroupID": 12
+   },
+   {
+    "Key": "A059350",
+    "Title": "0132 (Pedagogisch) medewerkers kinder...",
+    "Description": "(Pedagogisch) medewerkers kinderopvang: Deze beroepsgroep omvat de peuterwerkers, groepsleiders kinderdagverblijf, oppasouders, en au-pairs.",
+    "CategoryGroupID": 27
+   },
+   {
+    "Key": "A059351",
+    "Title": "0133 Onderwijsassistenten",
+    "Description": "Onderwijsassistenten: Deze beroepsgroep omvat de amanuenses, onderwijsassistenten, klassenassistenten, huiswerkbegeleiders en begeleiders/ondersteuners middelbaar beroepsonderwijs (bve).",
+    "CategoryGroupID": 27
+   },
+   {
+    "Key": "A000172",
+    "Title": "02 Creatieve en taalkundige beroepen",
+    "Description": "Creatieve en taalkundige beroepen: Deze beroepsklasse omvat de auteurs en kunstenaars, vakspecialisten op artistiek en cultureel gebied",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000173",
+    "Title": "021 Auteurs en kunstenaars",
+    "Description": "Auteurs en kunstenaars: Dit beroepssegment omvat de bibliothecarissen en conservatoren, auteurs en taalkundigen, journalisten en beeldend en uitvoerend kunstenaars",
+    "CategoryGroupID": 13
+   },
+   {
+    "Key": "A000174",
+    "Title": "0211 Bibliothecarissen en conservatoren",
+    "Description": "Bibliothecarissen en conservatoren: Deze beroepsgroep omvat de bibliothecarissen, archivarissen en conservators, archiefbeheerders, museumbeheerders, kunstgaleriehouders, literatuuronderzoekers en mediathecarissen",
+    "CategoryGroupID": 28
+   },
+   {
+    "Key": "A000175",
+    "Title": "0212 Auteurs en taalkundigen",
+    "Description": "Auteurs en taalkundigen: Deze beroepsgroep omvat de auteurs, technisch schrijvers, vertalers, tolken, ondertitelaars en andere taalkundigen",
+    "CategoryGroupID": 28
+   },
+   {
+    "Key": "A000176",
+    "Title": "0213 Journalisten",
+    "Description": "Journalisten: Deze beroepsgroep omvat de journalisten en redacteuren",
+    "CategoryGroupID": 28
+   },
+   {
+    "Key": "A000177",
+    "Title": "0214 Beeldend kunstenaars",
+    "Description": "Beeldend kunstenaars: Deze beroepsgroep omvat de beeldhouwers, kunstschilders, restaurateurs schilderijen en ontwerpers sierraden",
+    "CategoryGroupID": 28
+   },
+   {
+    "Key": "A000178",
+    "Title": "0215 Uitvoerend kunstenaars",
+    "Description": "Uitvoerend kunstenaars: Deze beroepsgroep omvat de musici, zangers en componisten, dansers en choreografen, regisseurs en producenten televisie, film en theater, acteurs, omroepers voor radio, televisie en andere media en entertainment artiesten",
+    "CategoryGroupID": 28
+   },
+   {
+    "Key": "A000179",
+    "Title": "022 Vakspecialisten op artistiek en ...",
+    "Description": "Vakspecialisten op artistiek en cultureel gebied: Dit beroepssegment omvat de grafisch vormgevers en productontwerpers, fotografen en interieurontwerpers",
+    "CategoryGroupID": 13
+   },
+   {
+    "Key": "A000180",
+    "Title": "0221 Grafisch vormgevers en producton...",
+    "Description": "Grafisch vormgevers en productontwerpers: Deze beroepsgroep omvat de kleding-, meubel- en industrieel ontwerpers, illustrators, web- en gamedesigners, grafisch en multimediavormgevers",
+    "CategoryGroupID": 28
+   },
+   {
+    "Key": "A000181",
+    "Title": "0222 Fotografen en interieurontwerpers",
+    "Description": "Fotografen en interieurontwerpers: Deze beroepsgroep omvat de fotografen, fotojournalisten, binnenhuisstylisten, decorateurs, decorontwerpers, museummedewerkers, inspiciënten, regieassistenten, rekwisiteurs en theatertechnici",
+    "CategoryGroupID": 28
+   },
+   {
+    "Key": "A000182",
+    "Title": "03 Commerciële beroepen",
+    "Description": "Commerciële beroepen: Deze beroepsklasse omvat de adviseurs marketing, public relations en sales, vertegenwoordigers, inkopers en verkopers",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000183",
+    "Title": "031 Adviseurs marketing, public relat...",
+    "Description": "Adviseurs marketing, public relations en sales: Dit beroepssegment omvat de specialisten marketing, sales en public relations",
+    "CategoryGroupID": 14
+   },
+   {
+    "Key": "A000184",
+    "Title": "0311 Adviseurs marketing, public rela...",
+    "Description": "Adviseurs marketing, public relations en sales: Deze beroepsgroep omvat de specialisten reclame en marketing, specialisten public relations, vertegenwoordigers en accountmanagers industrie, vertegenwoordigers informatie- en communicatietechnologie",
+    "CategoryGroupID": 29
+   },
+   {
+    "Key": "A000185",
+    "Title": "032 Accountmanagers retail en inkoper...",
+    "Description": "Accountmanagers retail en inkopers: Dit beroepssegment omvat de inkopers en verkopers en commissionairs.",
+    "CategoryGroupID": 14
+   },
+   {
+    "Key": "A000186",
+    "Title": "0321 Accountmanagers retail en inkope...",
+    "Description": "Accountmanagers retail en inkopers: Deze beroepsgroep omvat de verzekeringsagenten, vertegenwoordigers en accountmanagers retail en exportmanagers, inkopers, commissionairs.",
+    "CategoryGroupID": 29
+   },
+   {
+    "Key": "A000187",
+    "Title": "033 Verkopers",
+    "Description": "Verkopers: Dit beroepssegment omvat de winkeliers, verkopers in winkels, ambulante verkopers en overige verkopers",
+    "CategoryGroupID": 14
+   },
+   {
+    "Key": "A000188",
+    "Title": "0331 Winkeliers en teamleiders detail...",
+    "Description": "Winkeliers en teamleiders detailhandel: Deze beroepsgroep omvat de zelfstandige winkeliers als bloemisten, drogisten, juweliers, groenteboeren, kaasboeren, slijters etc. en afdelingsmanagers en -chefs in de detailhandel",
+    "CategoryGroupID": 29
+   },
+   {
+    "Key": "A000189",
+    "Title": "0332 Verkoopmedewerkers detailhandel",
+    "Description": "Verkoopmedewerkers detailhandel: Deze beroepsgroep omvat de verkoopmedewerkers in winkels",
+    "CategoryGroupID": 29
+   },
+   {
+    "Key": "A000190",
+    "Title": "0333 Kassamedewerkers",
+    "Description": "Kassamedewerkers: Deze beroepsgroep omvat de winkel caissières, kassamedewerkers bij evenementen en pretparken, bioscopen en lokettisten",
+    "CategoryGroupID": 29
+   },
+   {
+    "Key": "A000191",
+    "Title": "0334 Callcentermedewerkers outbound...",
+    "Description": "Callcentermedewerkers outbound en overige verkopers: Deze beroepsgroep omvat de straat- en marktverkopers, markt- en kioskverkopers, straatverkopers voedsel, mannequins en modellen, demonstrateurs, colporteurs, callcentermedewerkers outbound, pompbedienden, verkopers in fastfoodrestaurants en snackbars, medewerkers verhuur",
+    "CategoryGroupID": 29
+   },
+   {
+    "Key": "A000192",
+    "Title": "04 Bedrijfseconomische en administrat...",
+    "Description": "Bedrijfseconomische en administratieve beroepen: Deze beroepsklasse omvat de specialisten bedrijfsbeheer en administratie, specialisten personeels- en loopbaanontwikkeling en administratief personeel",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000193",
+    "Title": "041 Specialisten bedrijfsbeheer en ad...",
+    "Description": "Specialisten bedrijfsbeheer en administratie: Dit beroepssegment omvat de accountants en de financieel specialisten en economen, de bedrijfskundigen en organisatieadviseurs en de beleidsadviseurs",
+    "CategoryGroupID": 15
+   },
+   {
+    "Key": "A000194",
+    "Title": "0411 Accountants",
+    "Description": "Accountants: Deze beroepsgroep omvat de accountants, registeraccountants, controllers, fiscalisten, belastingadviseurs en auditors",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000195",
+    "Title": "0412 Financieel specialisten en economen",
+    "Description": "Financieel specialisten en economen: Deze beroepsgroep omvat de financieel adviseurs, lease consultants, bedrijvenadviseurs/cliëntadviseurs bankbedrijf, de portfoliomanagers beleggingen, de treasurers, beleggingsanalisten en risicomanagers",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000196",
+    "Title": "0413 Bedrijfskundigen en organisatie...",
+    "Description": "Bedrijfskundigen en organisatieadviseurs: Deze beroepsgroep omvat de bedrijfsorganisatiedeskundigen, bedrijfskundigen, auditoren kwaliteitszorg, bedrijfsadviseurs, bedrijfsanalisten, change managers, kwaliteitsfunctionarissen, organisatieadviseurs en procesanalisten",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000197",
+    "Title": "0414 Beleidsadviseurs",
+    "Description": "Beleidsadviseurs: Deze beroepsgroep omvat de beleidsmedewerkers, beleidsambtenaren, beleidsonderzoekers, bestuurskundigen, directiesecretarissen en secretarissen raden van bestuur",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000198",
+    "Title": "0415 Specialisten personeels- en loop...",
+    "Description": "Specialisten personeels- en loopbaanontwikkeling: Deze beroepsgroep omvat de adviseurs human resource management, de personeelsadviseurs, loopbaanadviseurs, de arbeidsdeskundigen, de beroepskeuzeadviseurs, de personeelsfunctionaris, de verzuimbegeleiders, de bedrijfsopleiders en de opleidingsfunctionarissen (P&O)",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000199",
+    "Title": "042 Vakspecialisten bedrijfsbeheer en...",
+    "Description": "Vakspecialisten bedrijfsbeheer en administratie: Dit beroepssegment omvat de boekhouders, zakelijke dienstverleners en de directiesecretaresses",
+    "CategoryGroupID": 15
+   },
+   {
+    "Key": "A000200",
+    "Title": "0421 Boekhouders",
+    "Description": "Boekhouders: Deze beroepsgroep omvat de effectenhandelaren, effectenmakelaars, de hypotheekadviseurs, kredietadviseurs, kredietbeoordelaars, de boekhouders, administrateurs, accountants-administratieconsulenten, assistent-accountants, assistent controllers, de actuarieel analisten, gegevensanalisten, statistisch medewerkers en de wiskundig assistenten, de medisch acceptanten, letselschadebehandelaars, schadebeoordelaars verzekeringen, schaderegelaars, schade-experts en de taxateurs (on)roerend goed",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000201",
+    "Title": "0422 Zakelijke dienstverleners",
+    "Description": "Zakelijke dienstverleners: Deze beroepsgroep omvat de inklaringsagenten en expediteurs, zoals cargadoors, scheepsbevrachters, expediteurs binnendienst/buitendienst, organisatoren van conferenties en evenementen, zoals eventmanagers, hofmeesters, banquetmanagers, beursorganisators, organisatoren conferenties, reisorganisators, de arbeidsbemiddelaars en uitzendbureaumedewerkers, zoals arbeidsbemiddelaars arbeidsbureaus, intercedenten, headhunters, mobiliteitsadviseurs, re-integratiecoaches, selectieadviseurs en spelersmakelaars, de makelaars onroerend goed en vastgoedbeheerders, zoals de makelaars o.g., de vastgoedbeheerders en woonconsulenten en de overige zakelijke dienstverleners als advertentie- en reclameacquisiteurs, contractmanagers, impresario's, theateragenten, muziek-, theaterprogrammeurs en veilingmeesters.",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000202",
+    "Title": "0423 Office managers en managementass...",
+    "Description": "Office managers en managementassistenten: Deze beroepsgroep omvat de office managers, juridisch secretaresses, directie-, project- en internationaal secretaresses en medisch secretaresses.",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000203",
+    "Title": "043 Administratief personeel",
+    "Description": "Administratief personeel: Dit beroepssegment omvat de administratief medewerkers, kassiers en baliemedewerkers bank, incassomedewerkers, bookmakers, croupiers, lommerdhouders en geldschieters, bibliotheekmedewerkers, postboden en postsorteerders, codeurs, correctoren, archiverings- en kopieermedewerkers, medewerkers personeelsadministratie en handelscorrespondenten",
+    "CategoryGroupID": 15
+   },
+   {
+    "Key": "A000204",
+    "Title": "0431 Administratief medewerkers",
+    "Description": "Administratief medewerkers: Deze beroepsgroep omvat de administratief medewerkers, administratief assistenten en kantoorassistenten, bibliotheekmedewerkers, postbezorgers, -bestellers, -sorteerders, medewerkers postkamer, codeurs, correctoren, archiefmedewerkers, dossierbeheerders, medewerkers kopieer-, printbedrijf, medewerkers personeelsadministratie, medewerker personeelszaken en handelscorrespondenten",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000205",
+    "Title": "0432 Secretarieel medewerkers",
+    "Description": "Secretarieel medewerkers: Deze beroepsgroep omvat de afdelingssecretaresses, medewerkers afsprakenbureau, administratief medewerkers secretariaat, notulisten, stenografen, stenotypisten, data entry medewerkers en datatypisten.",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000206",
+    "Title": "0433 Klantenservice medewerkers en re...",
+    "Description": "Klantenservice medewerkers en receptionisten: Deze beroepsgroep omvat de klantvoorlichters, reisconsulenten en reisbureaumedewerkers, de callcentermedewerkers inbound, zoals de callcentermedewerker klantenservice, de meldkamermedewerkers alarmcentrale (reizen), de telefonisten zoals de centralisten 112, centralisten brandweer, centralisten alarmcentrale, marconisten en medewerkers telefooncentrale, de hotelreceptionisten, informatieverstrekkers zoals de customerservicemedewerkers, servicebaliemedewerkers, medewerkers publiekszaken, receptionisten, werkplaatsreceptionisten, interviewers voor enquêtes en marktonderzoek, indicatiestellers, bemiddelaars kinderopvang en indicatieadviseurs gezondheidszorg.",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000207",
+    "Title": "0434 Financieel administratief medewe...",
+    "Description": "Financieel administratief medewerkers: Deze beroepsgroep omvat de medewerkers crediteuren-/debiteurenadministratie, administratief medewerkers bankbedrijf, facturisten, administratief medewerkers statistiek, financiën en verzekeringen, loon- en salarisadministrateurs.",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000208",
+    "Title": "0435 Werkvoorbereiders en logistiek m...",
+    "Description": "Werkvoorbereiders en logistiek medewerkers: Deze beroepsgroep omvat de logistiek medewerkers, medewerkers materiaal-, voorraadplanning en -beheer, de werkvoorbereiders, productieplanners en orderbegeleiders en de transportplanners, zoals coördinators logistiek, planners transport, expeditiechefs, ladingcontroleurs, radarwaarnemers, treindienstleiders en wegverkeersleider.",
+    "CategoryGroupID": 30
+   },
+   {
+    "Key": "A000209",
+    "Title": "05 Managers",
+    "Description": "Managers: Deze beroepsklasse omvat de managers die leidinggeven aan het gehele bedrijf of aan een afdeling binnen het bedrijf. Ze plannen, coördineren, geven sturing aan en evalueren de activiteiten binnen een bedrijf(sonderdeel). Managers zijn bevoegd beslissingen te nemen over het financiële, strategische en personeelsbeleid van de organisatie of onderdeel daarvan. Ze worden hierin vaak ondersteund of geadviseerd door andere managers.",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000210",
+    "Title": "051 Algemeen directeuren",
+    "Description": "Algemeen directeuren: Dit beroepssegment omvat de managers die leidinggeven aan het gehele bedrijf.",
+    "CategoryGroupID": 16
+   },
+   {
+    "Key": "A000211",
+    "Title": "0511 Algemeen directeuren",
+    "Description": "Algemeen directeuren: Deze beroepsgroep omvat de president directeuren van ondernemingen, commissarissen nv of bv, voorzitters raad van bestuur grote ondernemingen",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000212",
+    "Title": "052 Managers op administratief en com...",
+    "Description": "Managers op administratief en commercieel gebied: Dit beroepssegment omvat de managers zakelijke en administratieve dienstverlening en de managers verkoop en marketing",
+    "CategoryGroupID": 16
+   },
+   {
+    "Key": "A000213",
+    "Title": "0521 Managers zakelijke en administra...",
+    "Description": "Managers zakelijke en administratieve dienstverlening: Deze beroepsgroep omvat de financieel managers, managers personeel en organisatie, managers beleid en planning, facilitair managers, managers administratiekantoor, managers woningbouwvereniging",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000214",
+    "Title": "0522 Managers verkoop en marketing",
+    "Description": "Managers verkoop en marketing: Deze beroepsgroep omvat de managers verkoop en marketing, managers reclame en public relations en managers onderzoek en ontwikkeling (R&D)",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000215",
+    "Title": "053 Managers productie en gespecialis...",
+    "Description": "Managers productie en gespecialiseerde dienstverlening: Dit beroepssegment omvat de managers productie, managers logistiek, managers ICT, managers zorginstellingen, managers onderwijs en managers gespecialiseerde dienstverlening",
+    "CategoryGroupID": 16
+   },
+   {
+    "Key": "A000216",
+    "Title": "0531 Managers productie",
+    "Description": "Managers productie: Deze beroepsgroep omvat de managers industrie, managers mijnbouw, managers bouwnijverheid en managers logistiek, distributie en aanverwante gebieden en managers van grote landbouw- of visserijondernemingen",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000217",
+    "Title": "0532 Managers logistiek",
+    "Description": "Managers logistiek: Deze beroepsgroep omvat de managers stuwadoorsbedrijf, managers havenbedrijf, managers expeditiebedrijf en managers vervoerbedrijf",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000218",
+    "Title": "0533 Managers ICT",
+    "Description": "Managers ICT: Deze beroepsgroep omvat de managers ICT-bedrijf, managers Servicedesk ICT en hoofden systeemontwikkeling ICT",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000219",
+    "Title": "0534 Managers zorginstellingen",
+    "Description": "Managers zorginstellingen: Deze beroepsgroep omvat de managers kinderopvang, managers gezondheidszorg, managers ouderenzorg en managers sociale dienstverlening",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000220",
+    "Title": "0535 Managers onderwijs",
+    "Description": "Managers onderwijs: Deze beroepsgroep omvat de directeuren basisonderwijs, directeuren instellingen voor voortgezet onderwijs, directeuren instellingen voor beroepsonderwijs, managers universiteit, managers volksuniversiteit, managers landbouw-, natuur-, milieu-educatieve organisaties",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000221",
+    "Title": "0536 Managers gespecialiseerde dienst...",
+    "Description": "Managers gespecialiseerde dienstverlening: Deze beroepsgroep omvat de Managers financiële dienstverlening en verzekeringen en managers overige gespecialiseerde dienstverlening, zoals omroepdirecteuren, gevangenisdirecteuren, managers beveiligingsbedrijf, managers bibliotheek, managers concertgebouw, managers tolken-, vertaalbureau",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000222",
+    "Title": "054 Managers horeca, detailhandel en...",
+    "Description": "Managers horeca, detailhandel en overige diensten: Dit beroepssegment omvat de managers horeca, managers detail- en groothandel en managers commerciële en persoonlijke dienstverlening",
+    "CategoryGroupID": 16
+   },
+   {
+    "Key": "A000223",
+    "Title": "0541 Managers horeca",
+    "Description": "Managers horeca: Deze beroepsgroep omvat de hotelmanagers, restaurantmanagers, managers detail- en groothandel, managers recreatie en amusement",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000224",
+    "Title": "0542 Managers detail- en groothandel",
+    "Description": "Managers detail- en groothandel: Deze beroepsgroep omvat de managers detail- en groothandel en managers recreatie en amusement",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000225",
+    "Title": "0543 Managers commerciële en persoonl...",
+    "Description": "Managers commerciële en persoonlijke dienstverlening: Deze beroepsgroep omvat de managers verhuurbedrijf, managers callcenter, managers reisbureau, managers schoonheidssalon, managers seksinrichting/escortbedrijf en bedrijfsleiders crematorium",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000226",
+    "Title": "055 Managers z.n.d.",
+    "Description": "Managers z.n.d.: Dit beroepssegment omvat de managers waarvan de specialisatie onbekend is",
+    "CategoryGroupID": 16
+   },
+   {
+    "Key": "A000227",
+    "Title": "0551 Managers z.n.d.",
+    "Description": "Managers z.n.d.: Dit beroepssegment omvat de managers waarvan de specialisatie onbekend is",
+    "CategoryGroupID": 31
+   },
+   {
+    "Key": "A000228",
+    "Title": "06 Openbaar bestuur, veiligheid en ju...",
+    "Description": "Openbaar bestuur, veiligheid en juridische beroepen: Deze beroepsklasse omvat de overheidsambtenaren en -bestuurders, juristen, beveiligingspersoneel\r\nen militairen",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000229",
+    "Title": "061 Overheidsambtenaren en -bestuurders",
+    "Description": "Overheidsambtenaren en -bestuurders: Dit beroepssegment omvat de overheidsbestuurders en overheidsambtenaren",
+    "CategoryGroupID": 17
+   },
+   {
+    "Key": "A000230",
+    "Title": "0611 Overheidsbestuurders",
+    "Description": "Overheidsbestuurders: Deze beroepsgroep omvat de leden van wetgevende instanties, ambtenaren in beleidvoerende functies en bestuurders van belangenorganisaties zoals burgemeesters, commissarissen van de koning, leden van eerste en tweede kamer, gedeputeerden, gemeenteraadsleden, ministers en staatssecretarissen, wethouders, brandweerofficieren, dijkgraven, voorzitters adviesorganen van de overheid en bestuurders van werkgevers- en werknemersorganisaties en voorzitters van politieke partijen",
+    "CategoryGroupID": 32
+   },
+   {
+    "Key": "A000231",
+    "Title": "0612 Overheidsambtenaren",
+    "Description": "Overheidsambtenaren: Deze beroepsgroep omvat de douane-inspecteurs en grensbewakers, ambtenaren belastingen en accijnzen, ambtenaren sociale verzekeringen en ambtenaren vergunningen",
+    "CategoryGroupID": 32
+   },
+   {
+    "Key": "A000232",
+    "Title": "062 Juristen",
+    "Description": "Juristen: Dit beroepssegment omvat de advocaten en rechters en overige juristen",
+    "CategoryGroupID": 17
+   },
+   {
+    "Key": "A000233",
+    "Title": "0621 Juristen",
+    "Description": "Juristen: Deze beroepsgroep omvat de advocaten, advocaten-generaal, officieren van justitie, procureurs-generaal, rechters, raadsheren, bedrijfsjuristen, fiscaal juristen, gerechtssecretarissen, griffiers, juridisch adviseurs, notarissen en octrooigemachtigden",
+    "CategoryGroupID": 32
+   },
+   {
+    "Key": "A000234",
+    "Title": "063 Beveiligingswerkers",
+    "Description": "Beveiligingswerkers: Dit beroepssegment omvat de politie-inspecteurs, politie en brandweer, beveiligingspersoneel en militaire beroepen",
+    "CategoryGroupID": 17
+   },
+   {
+    "Key": "A000235",
+    "Title": "0631 Politie-inspecteurs",
+    "Description": "Politie-inspecteurs: Deze beroepsgroep omvat de inspecteurs van politie, rechercheurs politie, financieel rechercheurs, onderzoekers criminaliteit en particulier detectives",
+    "CategoryGroupID": 32
+   },
+   {
+    "Key": "A000236",
+    "Title": "0632 Politie en brandweer",
+    "Description": "Politie en brandweer: Deze beroepsgroep omvat de politiepersoneel en brandweerlieden",
+    "CategoryGroupID": 32
+   },
+   {
+    "Key": "A000237",
+    "Title": "0633 Beveiligingspersoneel",
+    "Description": "Beveiligingspersoneel: Deze beroepsgroep omvat de gevangenbewaarders, beveiligingspersoneel, parkeerwachters en strandwachten",
+    "CategoryGroupID": 32
+   },
+   {
+    "Key": "A000238",
+    "Title": "0634 Militaire beroepen",
+    "Description": "Militaire beroepen: Deze beroepsgroep omvat de militairen",
+    "CategoryGroupID": 32
+   },
+   {
+    "Key": "A000239",
+    "Title": "07 Technische beroepen",
+    "Description": "Technische beroepen: Deze beroepsklasse omvat de ingenieurs en onderzoekers wis-, natuur- en technische wetenschappen, \r\ntechnici en toezichthouders bouw en industrie, procesoperators, bouw- en metaalarbeiders en \r\nvoedselverwerkende beroepen",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000240",
+    "Title": "071 Ingenieurs en onderzoekers wis...",
+    "Description": "Ingenieurs en onderzoekers wis-, natuur- en technische wetenschappen: Dit beroepssegment omvat de biologen en natuurwetenschappers en ingenieurs",
+    "CategoryGroupID": 18
+   },
+   {
+    "Key": "A000241",
+    "Title": "0711 Biologen, wiskundigen en natuurw...",
+    "Description": "Biologen, wiskundigen en natuurwetenschappers: Deze beroepsgroep omvat de natuurkundigen en sterrenkundigen, meteorologen, chemici, geologen en geofysici, wiskundigen, actuarissen en statistici, biologen, agrarisch en milieudeskundigen, biologen, botanici, zoölogen, adviseurs op het gebied van landbouw, bosbouw en visserij en milieudeskundigen.",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000242",
+    "Title": "0712 Ingenieurs (geen elektrotechniek)",
+    "Description": "Ingenieurs (geen elektrotechniek): Deze beroepsgroep omvat de industrieel ingenieurs en productie-ingenieurs, weg- en waterbouwkundigen, milieutechnologen, werktuigbouwkundigen, chemisch ingenieurs, mijnbouwkundigen, metaalkundigen en materiaalkundigen",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000243",
+    "Title": "0713 Elektrotechnisch ingenieurs",
+    "Description": "Elektrotechnisch ingenieurs: Deze beroepsgroep omvat de ingenieurs elektrotechniek, elektronica en telecommunicatie, elektrotechnisch ingenieurs, elektronica- en hardware ingenieurs en telecommunicatie-ingenieurs",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000244",
+    "Title": "0714 Architecten en planologen",
+    "Description": "Architecten en planologen: Deze beroepsgroep omvat de architecten, planologen, landmeetkundigen en vormgevers, bouwkundig- en interieurarchitecten, landschapsarchitecten, stedenbouwkundigen en verkeersplanologen, cartografen en landmeetkundigen.",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000245",
+    "Title": "072 Vakspecialisten natuur en techniek",
+    "Description": "Vakspecialisten natuur en techniek: Dit beroepssegment omvat de technici bouwkunde en natuur, productieleiders industrie en bouw en procesoperators",
+    "CategoryGroupID": 18
+   },
+   {
+    "Key": "A000246",
+    "Title": "0721 Technici bouwkunde en natuur",
+    "Description": "Technici bouwkunde en natuur: Deze beroepsgroep omvat de scheikundige en natuurkundige onderzoekstechnici, technici weg- en waterbouw, bouwinspecteurs en landmeters, elektrotechnici, technici elektronica, technici werktuigbouwkunde, procestechnici (petro)chemische industrie, technici delfstofwinning en metallurgie, technisch tekenaars, vakspecialisten levenswetenschappen, landbouw en natuurbeheer, analisten en laboranten levenswetenschappen (m.u.v. medisch), vakspecialisten landbouw en boswachters, bos- en natuurbeheerders",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000247",
+    "Title": "0722 Productieleiders industrie en bouw",
+    "Description": "Productieleiders industrie en bouw: Deze beroepsgroep omvat toezichthoudend personeel in de mijnbouw, de industrie en de bouwnijverheid",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000248",
+    "Title": "0723 Procesoperators",
+    "Description": "Procesoperators: Deze beroepsgroep omvat de procesoperators elektriciteitscentrales, verbrandingsovens en waterzuiveringsinstallaties, chemische installaties, aardolie- en aardgasraffinaderijen, hoogovens",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000249",
+    "Title": "073 Bouwarbeiders",
+    "Description": "Bouwarbeiders: Dit beroepssegment omvat de bouwarbeiders, timmerlieden, schilders, behangers en metaalspuiters, loodgieters en pijpfitters",
+    "CategoryGroupID": 18
+   },
+   {
+    "Key": "A000250",
+    "Title": "0731 Bouwarbeiders ruwbouw",
+    "Description": "Bouwarbeiders ruwbouw: Deze beroepsgroep omvat de allround bouwvakkers, kleine bouwaannemers, medewerkers technisch onderhoud gebouwen, sloopwerkers, stratenmakers, metselaars, steenhouwers, betonwerkers en steigerbouwers",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000251",
+    "Title": "0732 Timmerlieden",
+    "Description": "Timmerlieden: Deze beroepsgroep omvat de timmerlieden, decorbouwers, monteurs zonwering, keukenmonteurs, trappenstellers, plafondmonteurs, kozijnmonteurs",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000252",
+    "Title": "0733 Bouwarbeiders afbouw",
+    "Description": "Bouwarbeiders afbouw: Deze beroepsgroep omvat de dakdekkers, vloerleggers, tegelzetters, stukadoors, isoleerders, glaszetters en installateurs luchtbehandeling en koeltechniek",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000253",
+    "Title": "0734 Loodgieters en pijpfitters",
+    "Description": "Loodgieters en pijpfitters: Deze beroepsgroep omvat de loodgieters en pijpfitters",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000254",
+    "Title": "0735 Schilders, verf- en lakspuiters",
+    "Description": "Schilders, verf- en lakspuiters: Deze beroepsgroep omvat de schilders, behangers, lak- en verfspuiters, gevelreinigers en schoorsteenvegers.",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000255",
+    "Title": "074 Metaalarbeiders, machinemonteurs",
+    "Description": "Metaalarbeiders, machinemonteurs: Dit beroepssegment omvat de metaalarbeiders en machinemonteurs",
+    "CategoryGroupID": 18
+   },
+   {
+    "Key": "A000256",
+    "Title": "0741 Metaalbewerkers en constructiewe...",
+    "Description": "Metaalbewerkers en constructiewerkers: Deze beroepsgroep omvat de smeden, metaalgieters, kernmakers, gereedschapsmakers, metaalpolijsters, machinestellers metaalproductvervaardiging, takelaars en kabelsplitsers, en constructiewerkers",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000257",
+    "Title": "0742 Lassers en plaatwerkers",
+    "Description": "Lassers en plaatwerkers: Deze beroepsgroep omvat de lassers, snijders en plaatwerkers",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000258",
+    "Title": "0743 Automonteurs",
+    "Description": "Automonteurs: Deze beroepsgroep omvat de automonteurs, bandenmonteurs, uitlijnspecialisten, apk-keurmeesters en scootermonteurs",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000259",
+    "Title": "0744 Machinemonteurs",
+    "Description": "Machinemonteurs: Deze beroepsgroep omvat de vliegtuigmonteurs, rijwielmonteurs, industriële- en landbouwmachinemonteurs",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000260",
+    "Title": "075 Voedselverwerkende beroepen en ov...",
+    "Description": "Voedselverwerkende beroepen en overige ambachten: Dit beroepssegment omvat de voedselverwerkende beroepen, meubelmakers, kleermakers en stoffeerder, drukkerijmedewerkers en medewerkers kunstnijverheid, springmeesters, duikers, ongedierte en onkruidbestrijders",
+    "CategoryGroupID": 18
+   },
+   {
+    "Key": "A000263",
+    "Title": "0753 Productcontroleurs",
+    "Description": "Productcontroleurs: Deze beroepsgroep omvat de productcontroleurs food en non-food, zuivel en conservenbereiders, tabaksbereiders, springmeesters, duikers, ongedierte en onkruidbestrijders",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000264",
+    "Title": "0754 Meubelmakers, kleermakers en sto...",
+    "Description": "Meubelmakers, kleermakers en stoffeerders: Deze beroepsgroep omvat de kleermakers, stoffeerders, schoenmakers, meubelmakers, houtbehandelaars en instellers houtbewerkingsmachines",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000265",
+    "Title": "0755 Medewerkers drukkerij en kunstni...",
+    "Description": "Medewerkers drukkerij en kunstnijverheid: Deze beroepsgroep omvat de drukkers, grafisch nabewerkers, drukwerkvoorbereiders, juweliers, pottenbakkers, fijninstrumentenmakers, vervaardigers muziekinstrumenten, glasblazers, letterschilders en overige kunstnijverheidsmedewerkers",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A059352",
+    "Title": "0756 Slagers en bakkers",
+    "Description": "Slagers en bakkers: Deze beroepsgroep omvat de slagers, vishandelaren, bakkers en banketbakkers.",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000266",
+    "Title": "076 Elektriciens en elektromonteurs",
+    "Description": "Elektriciens en elektromonteurs: Deze beroepsgroep omvat de installateurs en reparateurs van elektrische, elektronische en telecommunicatie apparatuur.",
+    "CategoryGroupID": 18
+   },
+   {
+    "Key": "A000267",
+    "Title": "0761 Elektriciens en elektromonteurs",
+    "Description": "Elektriciens en elektromonteurs: Deze beroepsgroep omvat de installateurs en reparateurs van elektrische, elektronische en telecommunicatieapparatuur.",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000268",
+    "Title": "077 Machine operators en assemblageme...",
+    "Description": "Machine operators en assemblagemedewerkers: Dit beroepssegment omvat de operators van productiemachines en assemblagemedewerkers.",
+    "CategoryGroupID": 18
+   },
+   {
+    "Key": "A000269",
+    "Title": "0771 Machine operators",
+    "Description": "Machine operators: Deze beroepsgroep omvat de machine operators vervaardiging voedingsmiddelen, textiel-, bont-, en leerproducten, rubber, kunststof of papierproducten, chemische en fotografische producten, delfstoffenwinnaar en bedieners vaste installaties en machines mineralen-, metaal en houtbewerking.",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000270",
+    "Title": "0772 Assemblagemedewerkers",
+    "Description": "Assemblagemedewerkers: Deze beroepsgroep omvat de assemblagemedewerkers",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000271",
+    "Title": "078 Hulpkrachten industrie en bouw",
+    "Description": "Hulpkrachten industrie en bouw: Deze beroepsgroep omvat de bouwvakhulpen, hulparbeiders weg- en waterbouw, puinruimers, wegwerkers, grondwerkers, inpakkers.",
+    "CategoryGroupID": 18
+   },
+   {
+    "Key": "A000272",
+    "Title": "0781 Hulpkrachten industrie en bouw",
+    "Description": "Hulpkrachten industrie en bouw: Deze beroepsgroep omvat de bouwvakhulpen, hulparbeiders weg- en waterbouw, puinruimers, wegwerkers, grondwerkers, inpakkers.",
+    "CategoryGroupID": 33
+   },
+   {
+    "Key": "A000273",
+    "Title": "08 ICT beroepen",
+    "Description": "ICT beroepen: Deze beroepsklasse omvat de ICT-specialisten, gebruikersondersteuning ICT, radio- en televisie technici",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000274",
+    "Title": "081 Specialisten ICT",
+    "Description": "Specialisten ICT: Dit beroepssegment omvat de software- applicatieontwikkelaars, databank- en netwerkspecialisten",
+    "CategoryGroupID": 19
+   },
+   {
+    "Key": "A000276",
+    "Title": "0812 Systeembeheerders en netwerkspec...",
+    "Description": "Systeembeheerders en netwerkspecialisten: Deze beroepsgroep omvat de ontwerpers en beheerders van databases, systeembeheerders, netwerkspecialisten, netwerkbeveiligers en adviseurs informatiebeveiliging.",
+    "CategoryGroupID": 34
+   },
+   {
+    "Key": "A059353",
+    "Title": "0813 Systeemanalisten en ICT-adviseur...",
+    "Description": "Systeemanalisten en ICT-adviseurs: Deze beroepsgroep omvat de systeemanalisten en ICT-adviseurs.",
+    "CategoryGroupID": 34
+   },
+   {
+    "Key": "A059354",
+    "Title": "0814 Software- en applicatieontwikkel...",
+    "Description": "Software- en applicatieontwikkelaars: Deze groep omvat de softwareontwikkelaars, webdevelopers, applicatieprogrammeurs en testers ICT-systemen.",
+    "CategoryGroupID": 34
+   },
+   {
+    "Key": "A000277",
+    "Title": "082 Vakspecialisten ICT",
+    "Description": "Vakspecialisten ICT: Dit beroepssegment omvat de medewerkers en technici gebruikersondersteuning ICT, radio- en televisietechnici",
+    "CategoryGroupID": 19
+   },
+   {
+    "Key": "A000278",
+    "Title": "0821 Gebruikersondersteuning ICT",
+    "Description": "Gebruikersondersteuning ICT: Deze beroepsgroep omvat de gebruikersondersteuning ICT, websitebeheerders, systeem technici, pc installateurs",
+    "CategoryGroupID": 34
+   },
+   {
+    "Key": "A000279",
+    "Title": "0822 Beeld- en geluidstechnici",
+    "Description": "Beeld- en geluidstechnici: Deze beroepsgroep omvat de beeld- en geluidstechnici radio en televisie en telecommunicatiebeheerders en -technici.",
+    "CategoryGroupID": 34
+   },
+   {
+    "Key": "A000280",
+    "Title": "09 Agrarische beroepen",
+    "Description": "Agrarische beroepen: Deze beroepsklasse omvat de tuinders, akkerbouwers, veetelers en hulpkrachten landbouw",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000281",
+    "Title": "091 Tuinders, akkerbouwers en veetelers",
+    "Description": "Tuinders, akkerbouwers en veetelers: Dit beroepssegment omvat de tuinders, akkerbouwers en veetelers",
+    "CategoryGroupID": 20
+   },
+   {
+    "Key": "A000282",
+    "Title": "0911 Land- en bosbouwers",
+    "Description": "Land- en bosbouwers: Deze beroepsgroep omvat de akkerbouwers en groentetelers volle grond, telers van fruit, boom en struikvruchten, agrariërs gemengd bedrijf en bosbouwers",
+    "CategoryGroupID": 35
+   },
+   {
+    "Key": "A000283",
+    "Title": "0912 Hoveniers, tuinders en kwekers",
+    "Description": "Hoveniers, tuinders en kwekers: Deze beroepsgroep omvat de hoveniers, tuinders en kwekers",
+    "CategoryGroupID": 35
+   },
+   {
+    "Key": "A000284",
+    "Title": "0913 Veetelers",
+    "Description": "Veetelers: Deze beroepsgroep omvat de veehouders, bijenhouders, persdierenfokkers, vissers en jagers",
+    "CategoryGroupID": 35
+   },
+   {
+    "Key": "A000285",
+    "Title": "092 Hulpkrachten land- en tuinbouw",
+    "Description": "Hulpkrachten land- en tuinbouw: Dit beroepssegment omvat de hulparbeiders akkerbouw, veeteelt, tuinbouw, bosbouw en visteelt.",
+    "CategoryGroupID": 20
+   },
+   {
+    "Key": "A000286",
+    "Title": "0921 Hulpkrachten land- en tuinbouw",
+    "Description": "Hulpkrachten land- en tuinbouw: Deze beroepsgroep omvat de hulparbeiders akkerbouw, veeteelt, tuinbouw, bosbouw en visteelt: bollenpellers, bloemensnijders, kasmedewerkers, eierrapers, garnalenpellers, oogstmedewerkers, fruitplukkers etc.",
+    "CategoryGroupID": 35
+   },
+   {
+    "Key": "A000287",
+    "Title": "10 Zorg en welzijn beroepen",
+    "Description": "Zorg en welzijn beroepen: Deze beroepsklasse omvat de artsen, therapeuten en verpleegkundigen, specialisten op maatschappelijk gebied, vakspecialisten gezondheidszorg, sociaal werkers, groeps- en woonbegeleiders en verzorgenden",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000288",
+    "Title": "101 Artsen, therapeuten en gespeciali...",
+    "Description": "Artsen, therapeuten en gespecialiseerd verpleegkundigen: Dit beroepssegment omvat de artsen, gespecialiseerd verpleegkundigen, fysiotherapeuten en overige specialisten gezondheidszorg",
+    "CategoryGroupID": 21
+   },
+   {
+    "Key": "A000289",
+    "Title": "1011 Artsen",
+    "Description": "Artsen: Deze beroepsgroep omvat de huisartsen, basisartsen, medisch specialisten, dierenartsen, tandartsen en apothekers",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000290",
+    "Title": "1012 Gespecialiseerd verpleegkundigen",
+    "Description": "Gespecialiseerd verpleegkundigen: Deze beroepsgroep omvat de gespecialiseerd verpleegkundigen, verpleegkundigen niveau 5, verpleegkundig coördinatoren, hoofdverpleegkundigen en verloskundigen",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000291",
+    "Title": "1013 Fysiotherapeuten",
+    "Description": "Fysiotherapeuten: Deze beroepsgroep omvat de fysiotherapeuten, audiologen en logopedisten, optometristen en orthoptisten, diëtisten, physician assistents, alternatief genezers en arbeidshygiënisten",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000292",
+    "Title": "102 Specialisten op maatschappelijk g...",
+    "Description": "Specialisten op maatschappelijk gebied: Dit beroepssegment omvat de maatschappelijk werkers, specialisten sociale hulpverlening, psychologen, sociologen en theologen",
+    "CategoryGroupID": 21
+   },
+   {
+    "Key": "A000293",
+    "Title": "1021 Maatschappelijk werkers",
+    "Description": "Maatschappelijk werkers: Deze beroepsgroep omvat de maatschappelijk werkers, ambulant begeleiders, jeugdbeschermers, gezinsvoogden, reclasseringswerkers, zorg coördinatoren en schuldhulpverleners",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000294",
+    "Title": "1022 Psychologen en sociologen",
+    "Description": "Psychologen en sociologen: Deze beroepsgroep omvat de psychologen, filosofen, historici en politicologen, theologen en voorgangers eredienst",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000295",
+    "Title": "103 Vakspecialisten gezondheidszorg",
+    "Description": "Vakspecialisten gezondheidszorg: Dit beroepssegment omvat de laboranten, apothekersassistenten, verpleegkundige mbo-niveau, medisch praktijkassistenten en overige medisch vakspecialisten",
+    "CategoryGroupID": 21
+   },
+   {
+    "Key": "A000296",
+    "Title": "1031 Laboranten",
+    "Description": "Laboranten: Deze beroepsgroep omvat de laboranten medische diagnostiek en therapie, medisch en pathologische laboranten",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000297",
+    "Title": "1032 Apothekersassistenten",
+    "Description": "Apothekersassistenten: Deze beroepsgroep omvat de farmaceutisch medewerkers en apothekersassistenten",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000298",
+    "Title": "1033 Verpleegkundigen (mbo)",
+    "Description": "Verpleegkundigen (mbo): Deze beroepsgroep omvat de verpleegkundigen niveau 4, verpleegkundigen zonder coördinerende of specialistische taken, assistent-verloskundigen, kraamverpleegkundigen",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000299",
+    "Title": "1034 Dokters- en tandartsassistenten",
+    "Description": "Dokters- en tandartsassistenten: Deze beroepsgroep omvat de veterinaire assistenten, dokterassistenten, dierenartsassistenten, tandartsassistenten, mondhygiënisten en medische praktijkassistenten.",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000300",
+    "Title": "1035 Inspecteurs veiligheid, gezondhe...",
+    "Description": "Inspecteurs veiligheid, gezondheid en medische vakspecialisten: Deze beroepsgroep omvat inspecteurs op gebied van voeding, veiligheid en gezondheid, de opticiens, masseurs, ambulancepersoneel, medewerkers gezondheidsvoorlichting en -opvoeding, prothese- en tandtechnici, medewerkers medische registratie en medisch archief.",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000301",
+    "Title": "104 Sociaal werkers, groeps- en woon...",
+    "Description": "Sociaal werkers, groeps- en woonbegeleiders: Dit beroepssegment omvat de notarieel en juridisch assistenten, deurwaarders, sociaal werkers, groeps- en woonbegeleiders en pastoraal werkers",
+    "CategoryGroupID": 21
+   },
+   {
+    "Key": "A000302",
+    "Title": "1041 Sociaal werkers, groeps- en woon...",
+    "Description": "Sociaal werkers, groeps- en woonbegeleiders: Deze beroepsgroep omvat de notarieel en juridisch assistenten, deurwaarders, sociaal werkers, groeps- en woonbegeleiders en pastoraal werkers",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000303",
+    "Title": "105 Verzorgenden",
+    "Description": "Verzorgenden: Dit beroepssegment omvat het verzorgend personeel in de gezondheidszorg",
+    "CategoryGroupID": 21
+   },
+   {
+    "Key": "A000304",
+    "Title": "1051 Verzorgenden",
+    "Description": "Verzorgenden: Deze beroepsgroep omvat het verzorgend personeel in de gezondheidszorg",
+    "CategoryGroupID": 36
+   },
+   {
+    "Key": "A000305",
+    "Title": "11 Dienstverlenende beroepen",
+    "Description": "Dienstverlenende beroepen: Deze beroepsklasse omvat de medewerkers persoonlijke dienstverlening, horecapersoneel, schoonmakers en keukenhulpen",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000306",
+    "Title": "111 Medewerkers persoonlijke dienstve...",
+    "Description": "Medewerkers persoonlijke dienstverlening: Dit beroepssegment omvat de reisbegeleiders, koks, kelners en barpersoneel, kappers en schoonheidsspecialisten, conciërges en teamleiders schoonmaak en overige verleners van persoonlijke diensten",
+    "CategoryGroupID": 22
+   },
+   {
+    "Key": "A000307",
+    "Title": "1111 Reisbegeleiders",
+    "Description": "Reisbegeleiders: Deze beroepsgroep omvat de reisbegeleiders, stewards, conducteurs, reisleiders en gidsen",
+    "CategoryGroupID": 37
+   },
+   {
+    "Key": "A000308",
+    "Title": "1112 Koks",
+    "Description": "Koks: Deze beroepsgroep omvat de koks en chef-koks",
+    "CategoryGroupID": 37
+   },
+   {
+    "Key": "A000309",
+    "Title": "1113 Medewerkers bediening horeca en ...",
+    "Description": "Medewerkers bediening horeca en barpersoneel: Deze beroepsgroep omvat de medewerkers bediening horeca en barpersoneel.",
+    "CategoryGroupID": 37
+   },
+   {
+    "Key": "A000310",
+    "Title": "1114 Kappers en schoonheidsspecialisten",
+    "Description": "Kappers en schoonheidsspecialisten: Deze beroepsgroep omvat de kappers en schoonheidsspecialisten",
+    "CategoryGroupID": 37
+   },
+   {
+    "Key": "A000311",
+    "Title": "1115 Conciërges en teamleiders schoon...",
+    "Description": "Conciërges en teamleiders schoonmaak: Deze beroepsgroep omvat de teamleiders huishoudelijke diensten en schoonmaak, butlers, pensionhouders en conciërges",
+    "CategoryGroupID": 37
+   },
+   {
+    "Key": "A000312",
+    "Title": "1116 Verleners van overige persoonlij...",
+    "Description": "Verleners van overige persoonlijke diensten: Deze beroepsgroep omvat de uitvaartmedewerkers, dierverzorgers, rijinstructeurs, buddy's, astrologen, waarzeggers en prostituees",
+    "CategoryGroupID": 37
+   },
+   {
+    "Key": "A000313",
+    "Title": "112 Schoonmakers en keukenhulpen",
+    "Description": "Schoonmakers en keukenhulpen: Dit beroepssegment omvat de schoonmakers en keukenhulpen",
+    "CategoryGroupID": 22
+   },
+   {
+    "Key": "A000314",
+    "Title": "1121 Schoonmakers",
+    "Description": "Schoonmakers: Deze beroepsgroep omvat de schoonmakers in huishoudens, hotels en kantoren, autowassers, glazenwassers en overige schoonmakers",
+    "CategoryGroupID": 37
+   },
+   {
+    "Key": "A000315",
+    "Title": "1122 Keukenhulpen",
+    "Description": "Keukenhulpen: Deze beroepsgroep omvat de fastfoodbereiders en keukenhulpen",
+    "CategoryGroupID": 37
+   },
+   {
+    "Key": "A000316",
+    "Title": "12 Transport en logistiek beroepen",
+    "Description": "Transport en logistiek beroepen: Deze beroepsklasse omvat de bestuurders voertuigen en bedieners mobiele installaties, en hulpkrachten transport en logistiek",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000317",
+    "Title": "121 Bestuurders voertuigen en bediene...",
+    "Description": "Bestuurders voertuigen en bedieners mobiele machines: Dit beroepssegment omvat de dek officieren, piloten, chauffeurs personenvervoer en bestelwagens, bus- en vrachtwagenchauffeurs en hulpkrachten transport en logistiek",
+    "CategoryGroupID": 23
+   },
+   {
+    "Key": "A000318",
+    "Title": "1211 Dekofficieren en piloten",
+    "Description": "Dek officieren en piloten: Deze beroepsgroep omvat de scheepswerktuigkundigen, de officieren en loodsen, piloten, vlieginstructeurs, luchtverkeersleiders en elektrotechnici luchtvaarveiligheid",
+    "CategoryGroupID": 38
+   },
+   {
+    "Key": "A000319",
+    "Title": "1212 Chauffeurs auto's, taxi's en bes...",
+    "Description": "Chauffeurs auto's, taxi's en bestelwagens: Deze beroepsgroep omvat de bestuurder motorrijwielen, chauffeurs auto's, taxi's en bestelwagens",
+    "CategoryGroupID": 38
+   },
+   {
+    "Key": "A000320",
+    "Title": "1213 Buschauffeurs en trambestuurders",
+    "Description": "Buschauffeurs en trambestuurders: Deze beroepsgroep omvat de buschauffeurs en trambestuurders",
+    "CategoryGroupID": 38
+   },
+   {
+    "Key": "A000321",
+    "Title": "1214 Vrachtwagenchauffeurs",
+    "Description": "Vrachtwagenchauffeurs: Deze beroepsgroep omvat de vrachtwagenchauffeurs",
+    "CategoryGroupID": 38
+   },
+   {
+    "Key": "A000322",
+    "Title": "1215 Bedieners mobiele machines",
+    "Description": "Bedieners mobiele machines: Deze beroepsgroep omvat de treinmachinisten, bedieners mobiele land-, bosbouw en grondverzetmachines, kraandrijvers, heftruckchauffeurs en dek personeel op schepen",
+    "CategoryGroupID": 38
+   },
+   {
+    "Key": "A000323",
+    "Title": "122 Hulpkrachten transport en logistiek",
+    "Description": "Hulpkrachten transport en logistiek: Dit beroepssegment omvat de magazijnmedewerkers, laders, lossers, vakkenvullers, vuilnisophalers en dagbladenbezorgers",
+    "CategoryGroupID": 23
+   },
+   {
+    "Key": "A059355",
+    "Title": "1223 Laders, lossers en vakkenvullers...",
+    "Description": "Laders, lossers en vakkenvullers: Deze beroepsgroep omvat de laders, lossers, magazijnmedewerkers en vakkenvullers.",
+    "CategoryGroupID": 38
+   },
+   {
+    "Key": "A059356",
+    "Title": "1224 Fietskoeriers en dagbladenbezorg...",
+    "Description": "Vuilnisophalers en dagbladenbezorgers: Deze beroepsgroep omvat de fietskoeriers, vuilnisophalers, straatvegers, garderobemedewerkers, meteropnemers, dagbladenbezorgers en flyer-uitdelers op straat.",
+    "CategoryGroupID": 38
+   },
+   {
+    "Key": "A000326",
+    "Title": "13 Beroepsklasse overig",
+    "Description": "Deze beroepsklasse omvat werkzame personen waarvan het beroep onbekend of niet \r\nin te delen is.",
+    "CategoryGroupID": 9
+   },
+   {
+    "Key": "A000327",
+    "Title": "131 Beroepssegment overig",
+    "Description": "Dit beroepssegment omvat werkzame personen waarvan het beroep onbekend of niet in te delen is",
+    "CategoryGroupID": 24
+   },
+   {
+    "Key": "A000328",
+    "Title": "1311 Beroepsgroep overig",
+    "Description": "Deze beroepsgroep omvat werkzame personen waarvan het beroep onbekend of niet",
+    "CategoryGroupID": 39
+   }
+  ],
+  "Perioden": [
+   {
+    "Key": "2013KW01",
+    "Title": "2013 1e kwartaal",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2013KW02",
+    "Title": "2013 2e kwartaal",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2013KW03",
+    "Title": "2013 3e kwartaal",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2013KW04",
+    "Title": "2013 4e kwartaal",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2013JJ00",
+    "Title": "2013",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2014KW01",
+    "Title": "2014 1e kwartaal",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2014KW02",
+    "Title": "2014 2e kwartaal",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2014KW03",
+    "Title": "2014 3e kwartaal",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2014KW04",
+    "Title": "2014 4e kwartaal",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2014JJ00",
+    "Title": "2014",
+    "Description": "",
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2015KW01",
+    "Title": "2015 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2015KW02",
+    "Title": "2015 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2015KW03",
+    "Title": "2015 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2015KW04",
+    "Title": "2015 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2015JJ00",
+    "Title": "2015 ",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2016KW01",
+    "Title": "2016 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2016KW02",
+    "Title": "2016 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2016KW03",
+    "Title": "2016 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2016KW04",
+    "Title": "2016 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2016JJ00",
+    "Title": "2016",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2017KW01",
+    "Title": "2017 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2017KW02",
+    "Title": "2017 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2017KW03",
+    "Title": "2017 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2017KW04",
+    "Title": "2017 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2017JJ00",
+    "Title": "2017",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2018KW01",
+    "Title": "2018 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2018KW02",
+    "Title": "2018 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2018KW03",
+    "Title": "2018 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2018KW04",
+    "Title": "2018 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2018JJ00",
+    "Title": "2018",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2019KW01",
+    "Title": "2019 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2019KW02",
+    "Title": "2019 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2019KW03",
+    "Title": "2019 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2019KW04",
+    "Title": "2019 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2019JJ00",
+    "Title": "2019",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2020KW01",
+    "Title": "2020 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2020KW02",
+    "Title": "2020 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2020KW03",
+    "Title": "2020 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2020KW04",
+    "Title": "2020 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2020JJ00",
+    "Title": "2020",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2021KW01",
+    "Title": "2021 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2021KW02",
+    "Title": "2021 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2021KW03",
+    "Title": "2021 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2021KW04",
+    "Title": "2021 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2021JJ00",
+    "Title": "2021",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2022KW01",
+    "Title": "2022 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2022KW02",
+    "Title": "2022 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2022KW03",
+    "Title": "2022 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2022KW04",
+    "Title": "2022 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2022JJ00",
+    "Title": "2022",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2023KW01",
+    "Title": "2023 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2023KW02",
+    "Title": "2023 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2023KW03",
+    "Title": "2023 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2023KW04",
+    "Title": "2023 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2023JJ00",
+    "Title": "2023",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2024KW01",
+    "Title": "2024 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2024KW02",
+    "Title": "2024 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2024KW03",
+    "Title": "2024 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2024KW04",
+    "Title": "2024 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2024JJ00",
+    "Title": "2024",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2025KW01",
+    "Title": "2025 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2025KW02",
+    "Title": "2025 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2025KW03",
+    "Title": "2025 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2025KW04",
+    "Title": "2025 4e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2025JJ00",
+    "Title": "2025",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2026KW01",
+    "Title": "2026 1e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2026KW02",
+    "Title": "2026 2e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   },
+   {
+    "Key": "2026KW03",
+    "Title": "2026 3e kwartaal",
+    "Description": null,
+    "Status": "Definitief"
+   }
+  ]
+ },
+ "category_groups": [
+  {
+   "ID": 0,
+   "DimensionKey": "Persoonskenmerken",
+   "Title": "Kenmerken",
+   "Description": "",
+   "ParentID": null
+  },
+  {
+   "ID": 1,
+   "DimensionKey": "Persoonskenmerken",
+   "Title": "Totaal",
+   "Description": "",
+   "ParentID": 0
+  },
+  {
+   "ID": 2,
+   "DimensionKey": "Persoonskenmerken",
+   "Title": "Leeftijd",
+   "Description": "",
+   "ParentID": 0
+  },
+  {
+   "ID": 3,
+   "DimensionKey": "Persoonskenmerken",
+   "Title": "Onderwijs: hoogst behaald niveau",
+   "Description": "",
+   "ParentID": 0
+  },
+  {
+   "ID": 4,
+   "DimensionKey": "Persoonskenmerken",
+   "Title": "Arbeidsduur",
+   "Description": "",
+   "ParentID": 0
+  },
+  {
+   "ID": 5,
+   "DimensionKey": "Persoonskenmerken",
+   "Title": "Positie in de werkkring",
+   "Description": "",
+   "ParentID": 0
+  },
+  {
+   "ID": 6,
+   "DimensionKey": "Beroep",
+   "Title": "Beroepsniveau",
+   "Description": "NA",
+   "ParentID": null
+  },
+  {
+   "ID": 7,
+   "DimensionKey": "Beroep",
+   "Title": "Beroepsniveau",
+   "Description": "",
+   "ParentID": 6
+  },
+  {
+   "ID": 8,
+   "DimensionKey": "Beroep",
+   "Title": "Beroepsklasse (2-digits)",
+   "Description": null,
+   "ParentID": null
+  },
+  {
+   "ID": 9,
+   "DimensionKey": "Beroep",
+   "Title": "Beroepsklasse (2-digits)",
+   "Description": null,
+   "ParentID": 8
+  },
+  {
+   "ID": 10,
+   "DimensionKey": "Beroep",
+   "Title": "Beroepssegment (3-digits) per klasse",
+   "Description": null,
+   "ParentID": null
+  },
+  {
+   "ID": 11,
+   "DimensionKey": "Beroep",
+   "Title": "Totaal",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 12,
+   "DimensionKey": "Beroep",
+   "Title": "01-Pedagogische beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 13,
+   "DimensionKey": "Beroep",
+   "Title": "02-Creatieve en taalkundige beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 14,
+   "DimensionKey": "Beroep",
+   "Title": "03-Commerciële beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 15,
+   "DimensionKey": "Beroep",
+   "Title": "04-Bedrijfseconomische en administrat...",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 16,
+   "DimensionKey": "Beroep",
+   "Title": "05-Managers",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 17,
+   "DimensionKey": "Beroep",
+   "Title": "06-Openbaar bestuur, veiligheid en ju.",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 18,
+   "DimensionKey": "Beroep",
+   "Title": "07-Technische beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 19,
+   "DimensionKey": "Beroep",
+   "Title": "08-ICT beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 20,
+   "DimensionKey": "Beroep",
+   "Title": "09-Agrarische beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 21,
+   "DimensionKey": "Beroep",
+   "Title": "10-Zorg en welzijn beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 22,
+   "DimensionKey": "Beroep",
+   "Title": "11-Dienstverlenende beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 23,
+   "DimensionKey": "Beroep",
+   "Title": "12-Transport en logistiek beroepen",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 24,
+   "DimensionKey": "Beroep",
+   "Title": "13-Beroepsklasse overig",
+   "Description": null,
+   "ParentID": 10
+  },
+  {
+   "ID": 25,
+   "DimensionKey": "Beroep",
+   "Title": "Beroepsgroep (4-digits) per klasse",
+   "Description": null,
+   "ParentID": null
+  },
+  {
+   "ID": 26,
+   "DimensionKey": "Beroep",
+   "Title": "Totaal",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 27,
+   "DimensionKey": "Beroep",
+   "Title": "01-Pedagogische beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 28,
+   "DimensionKey": "Beroep",
+   "Title": "02-Creatieve en taalkundige beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 29,
+   "DimensionKey": "Beroep",
+   "Title": "03-Commerciële beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 30,
+   "DimensionKey": "Beroep",
+   "Title": "04-Bedrijfseconomische en administrat…",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 31,
+   "DimensionKey": "Beroep",
+   "Title": "05-Managers",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 32,
+   "DimensionKey": "Beroep",
+   "Title": "06-Openbaar bestuur, veiligheid en ju…",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 33,
+   "DimensionKey": "Beroep",
+   "Title": "07-Technische beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 34,
+   "DimensionKey": "Beroep",
+   "Title": "08-ICT beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 35,
+   "DimensionKey": "Beroep",
+   "Title": "09-Agrarische beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 36,
+   "DimensionKey": "Beroep",
+   "Title": "10-Zorg en welzijn beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 37,
+   "DimensionKey": "Beroep",
+   "Title": "11-Dienstverlenende beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 38,
+   "DimensionKey": "Beroep",
+   "Title": "12-Transport en logistiek beroepen",
+   "Description": null,
+   "ParentID": 25
+  },
+  {
+   "ID": 39,
+   "DimensionKey": "Beroep",
+   "Title": "13-Beroepsklasse overig",
+   "Description": null,
+   "ParentID": 25
+  }
+ ]
+}
